@@ -8,11 +8,11 @@
 		<version>3.1.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>hu.unideb.inf.sfm2023h10.cs3.bikerevolution</groupId>
+	<groupId>com.sfm2023</groupId>
 	<artifactId>BikeRevolution</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BikeRevolution</name>
-	<description>Project for SFM2023</description>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -25,9 +25,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -40,37 +46,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>3.1.4</version>
-        </dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-controls</artifactId>
-			<version>17.0.6</version>
+			<artifactId>javafx-graphics</artifactId>
+			<version>17.0.8</version>
 		</dependency>
-		<dependency>
-			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-fxml</artifactId>
-			<version>17.0.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.controlsfx</groupId>
-			<artifactId>controlsfx</artifactId>
-			<version>11.1.2</version>
-		</dependency><dependency>
-		<groupId>com.dlsc.formsfx</groupId>
-		<artifactId>formsfx-core</artifactId>
-		<version>11.6.0</version>
-		<exclusions>
-			<exclusion>
-				<groupId>org.openjfx</groupId>
-				<artifactId>*</artifactId>
-			</exclusion>
-		</exclusions>
-	</dependency>
-    </dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>
