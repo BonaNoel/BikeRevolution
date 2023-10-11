@@ -1,4 +1,4 @@
-package hu.unideb.inf.sfm2023h10.cs3.bikerevolution.BikeRevolution;
+package com.sfm2023.BikeRevolution;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
