@@ -1,26 +1,15 @@
 package com.sfm2023.BikeRevolution;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
+import javafx.application.Application;
+
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BikeRevolutionApplication implements CommandLineRunner {
+public class BikeRevolutionApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BikeRevolutionApplication.class, args);
-    }
-
-    @Autowired
-    PartsRepo partsRepo;
-    @Override
-    public void run(String... args) throws Exception{
-        Parts h=new Parts();
-        h.setBelso(26);
-        h.setTorzsvendeg("Bela");
-
-        partsRepo.save(h);
+        Application.launch(JavaFXApplication.class, args);
     }
 
 }
