@@ -7,11 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 
+import java.util.Objects;
+
 public class JavaFXApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         SpringApplication.run(BikeRevolutionApplication.class);
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Scene.fxml")));
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
