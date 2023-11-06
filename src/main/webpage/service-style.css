@@ -22,7 +22,7 @@ body {
   color: black;
 }
 .btn {
-  border: 1px solid black;
+  border: 3px solid black;
   padding: 10px 30px;
   color: black;
   text-decoration: none;
@@ -36,10 +36,11 @@ body {
   color: white;
 }
 
-label {
-  font-size: 20px;
+label,
+input {
+  display: flex;
+  flex-direction: column;
   font-family: "Marker Felt", fantasy;
-  color: black;
 }
 
 .form {
@@ -48,7 +49,31 @@ label {
   margin-left: 35%;
   margin-right: 35%;
   text-align: left;
-  padding: 30px;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+}
+
+.nev {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+
+.telefon {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+
+.ido {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+
+.leiras {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
 }

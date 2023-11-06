@@ -15,14 +15,14 @@
         <div class="form">
             <form action="bikeservice.php" method="post">
                 <label for="name"> Név: </label>
-                <input type="text" name="name" placeholder="Név"> <br>
+                <input type="text" name="name" placeholder="Név" class="nev"> <br>
                 <label for="phone"> Telefonszám: </label>
-                <input type="text" name="phone" placeholder="Telefonszám"> <br>
+                <input type="text" name="phone" placeholder="Telefonszám" class="telefon"> <br>
                 <label for="date"> Időpont: </label>
-                <input type="datetime-local" name="date"> <br>
+                <input type="datetime-local" name="date" class="ido"> <br>
                 <label for="description"> Leírás: </label>
-                <input type="text" name="description" placeholder="Leírás"> <br>
-                <input type="submit" name="submit" value="Foglalás">
+                <input type="text" name="description" class="leiras" placeholder="Leírás"> <br>
+                <input type="submit" name="submit" class="foglalas" value="Foglalás">
             </form>
         </div>
 </body>
