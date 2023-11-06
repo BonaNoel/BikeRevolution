@@ -1,4 +1,3 @@
- <!-- Purpose: Bike Start page / Index page -->
 
 <!DOCTYPE html>
 <html>
@@ -14,22 +13,22 @@
         }
         .container {
             text-align: center;
-            margin-top: 20%;
+            margin-top: 10%;
         }
         .title {
-            font-size: 50px;
+            font-size: 40px;
             font-family: "Times New Roman", Times, serif;
-            color: white;
+            color: black;
         }
         .subtitle {
-            font-size: 30px;
+            font-size: 20px;
             font-family: "Times New Roman", Times, serif;
-            color: white;
+            color: black;
         }
         .btn {
-            border: 1px solid white;
+            border: 1px solid black;
             padding: 10px 30px;
-            color: white;
+            color: black;
             text-decoration: none;
             margin: 10px;
             font-size: 20px;
@@ -37,8 +36,8 @@
             transition: 0.6s ease;
         }
         .btn:hover {
-            background-color: white;
-            color: black;
+            background-color: black;
+            color: white;
         }
     </style>
 
@@ -54,8 +53,8 @@
     </div>
     <div class="container">
         <div class="buttons">
-            <a href="bikelogin.php" class="btn"> Login </a>
-            <a href="bikeregister.php" class="btn"> Register </a>
+            <a href="bikelogin.php" class="btn"> Bejelentkezés </a>
+            <a href="bikeregister.php" class="btn"> Regisztráció </a>
         </div>
     </div>
 </body>
