@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -16,7 +13,7 @@
     <children>
         <TabPane fx:id="tabController" layoutX="6.0" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="157.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
-                <Tab fx:id="tictetTab" text="Szervív, Foglalás">
+                <Tab fx:id="szervizFoglalasTab" text="Szervíz foglalás">
                     <content>
                         <TextField depthTest="ENABLE" layoutX="40.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity">
                             <padding>
@@ -30,37 +27,37 @@
                     <content>
                         <AnchorPane prefHeight="500.0" prefWidth="700.0">
                             <children>
-                                <TextField fx:id="nameTextField" layoutX="45.0" layoutY="47.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="370.59999999999997" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="420.4" AnchorPane.topAnchor="40.0" />
+                                <TextField fx:id="nevTextField" layoutX="45.0" layoutY="47.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="370.59999999999997" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="420.4" AnchorPane.topAnchor="40.0" />
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Név:" AnchorPane.bottomAnchor="379.2" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="597.86328125" AnchorPane.topAnchor="45.0" />
-                                <TextField fx:id="phoneTextField" layoutX="45.0" layoutY="47.0" AnchorPane.bottomAnchor="297.59999999999997" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="422.0" AnchorPane.topAnchor="100.0" />
+                                <TextField fx:id="telefonTextField" layoutX="45.0" layoutY="47.0" AnchorPane.bottomAnchor="297.59999999999997" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="422.0" AnchorPane.topAnchor="100.0" />
                                 <Text layoutX="90.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonszám:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="110.0" />
-                                <TextField fx:id="serviceTextField" layoutX="55.0" layoutY="57.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="180.0" />
                                 <Text layoutX="100.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Szervíz típusa:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="180.0" />
-                                <TextField fx:id="priceTextField" layoutX="65.0" layoutY="67.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="230.0" />
+                                <TextField fx:id="arTextField" layoutX="65.0" layoutY="67.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="230.0" />
                                 <Text layoutX="110.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ár:" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="235.0" />
+                        <ChoiceBox fx:id="szervizTipusChoiceBox" layoutX="130.0" layoutY="176.0" prefWidth="150.0" />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="storageTab" text="Raktár">
+                <Tab fx:id="raktarTab" text="Raktár">
                     <content>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                             <children>
-                                <ListView layoutY="7.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0" />
+                                <ListView fx:id="raktarListVieW" layoutY="7.0" prefHeight="443.2" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="liveTicketTab" text="Fogalások">
+                <Tab fx:id="foglalasTab" text="Foglalások">
                     <content>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                            <children>
-                                <ListView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                            </children>
+                     <children>
+                        <TreeView fx:id="foglalasokTreeView" layoutX="54.0" layoutY="37.0" prefHeight="443.2" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="logOutTab" text="Kijelentkezés" />
+                <Tab fx:id="webTab" text="Web" />
             </tabs>
         </TabPane>
     </children>
