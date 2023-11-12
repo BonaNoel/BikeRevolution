@@ -1,4 +1,4 @@
-package com.sfm2023.BikeRevolution;
+package com.sfm2023.BikeRevolution.Spring;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

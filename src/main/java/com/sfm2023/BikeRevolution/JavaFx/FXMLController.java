@@ -1,4 +1,4 @@
-package com.sfm2023.BikeRevolution;
+package com.sfm2023.BikeRevolution.JavaFx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,12 +46,13 @@ public class FXMLController implements Initializable {
 
     @FXML
     private Tab webTab;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
 
-
     }
+}
 
 
 
