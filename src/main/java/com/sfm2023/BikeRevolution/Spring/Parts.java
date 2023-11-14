@@ -1,14 +1,20 @@
 package com.sfm2023.BikeRevolution.Spring;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
-
+import lombok.NoArgsConstructor;
 @Data
+@Entity
 @AllArgsConstructor
+@NoArgsConstructor
 public class Parts {
-    private @NonNull Long id;
-    private String partName;
-    private String partQuantity;
-    private String partPrice;
+    @Id
+    @GeneratedValue
+    Long id;
+    String partName;
+    Integer partQuantity;
+    Integer partPrice;
 }
