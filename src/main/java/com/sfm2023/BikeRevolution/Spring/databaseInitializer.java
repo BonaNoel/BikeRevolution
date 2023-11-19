@@ -39,19 +39,18 @@ public class databaseInitializer implements CommandLineRunner {
         partsRepository.save(new Parts(19L,"Gumijavító készlet (külső)",15,8));
         partsRepository.save(new Parts(20L,"Váltóbowden",25,5));
 
-
-        repairsRepository.save(new Repairs(101L,"Defekt Javítás Cserével","Belső gumicsere ","33"));
-        repairsRepository.save(new Repairs(102L,"Defekt Javítás Ragasztással","Belső gumi javítása","15"));
-        repairsRepository.save(new Repairs(103L,"Lánc Csere","Új lánc felszerelése/Olajozása","40"));
-        repairsRepository.save(new Repairs(104L,"Fékbetét Csere/Új fékbowden beállítása","Fékalkatrészek beállítása vagy cseréje","38"));
-        repairsRepository.save(new Repairs(105L,"Váltóállítás","Váltókábel beállítása vagy cseréje","28"));
-        repairsRepository.save(new Repairs(106L,"Kerék Centrálás","Küllők beállítása és kiegyensúlyozás","30"));
-        repairsRepository.save(new Repairs(107L,"Féktárcsa Csere","Féktárcsa cseréje és beállítása","78"));
-        repairsRepository.save(new Repairs(108L,"Kormányfej Cseréje","Kormányfej cseréje és beállítása/Zsírozása","65"));
-        repairsRepository.save(new Repairs(109L,"Pedál Cseréje","Pedál cseréje és beállítása/Zsírozása","30"));
-        repairsRepository.save(new Repairs(110L,"Kormány és Kormányszár Állítás","Kormány és kormányszár beállítása","25"));
-        repairsRepository.save(new Repairs(111L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírzás","25"));
-        repairsRepository.save(new Repairs(112L,"Gumi Csere","Első hátsó külső gumi csere","30"));
+        repairsRepository.save(new Repairs(1L,"Defekt Javítás Cserével","Belső gumicsere ","33"));
+        repairsRepository.save(new Repairs(2L,"Defekt Javítás Ragasztással","Belső gumi javítása","15"));
+        repairsRepository.save(new Repairs(3L,"Lánc Csere","Új lánc felszerelése/Olajozása","40"));
+        repairsRepository.save(new Repairs(4L,"Fékbetét Csere/Új fékbowden beállítása","Fékalkatrészek beállítása vagy cseréje","38"));
+        repairsRepository.save(new Repairs(5L,"Váltóállítás","Váltókábel beállítása vagy cseréje","28"));
+        repairsRepository.save(new Repairs(6L,"Kerék Centrálás","Küllők beállítása és kiegyensúlyozás","30"));
+        repairsRepository.save(new Repairs(7L,"Féktárcsa Csere","Féktárcsa cseréje és beállítása","78"));
+        repairsRepository.save(new Repairs(8L,"Kormányfej Cseréje","Kormányfej cseréje és beállítása/Zsírozása","65"));
+        repairsRepository.save(new Repairs(9L,"Pedál Cseréje","Pedál cseréje és beállítása/Zsírozása","30"));
+        repairsRepository.save(new Repairs(10L,"Kormány és Kormányszár Állítás","Kormány és kormányszár beállítása","25"));
+        repairsRepository.save(new Repairs(11L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírzás","25"));
+        repairsRepository.save(new Repairs(12L,"Gumi Csere","Első hátsó külső gumi csere","30"));
 
         System.out.println("Database uploaded successfully");
     }
