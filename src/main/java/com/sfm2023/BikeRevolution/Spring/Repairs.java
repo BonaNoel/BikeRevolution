@@ -18,5 +18,6 @@ public class Repairs {
     @GeneratedValue
     Long id;
     String repairName;
+    String repairDescription;
     String repairCost;
 }
