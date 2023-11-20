@@ -13,9 +13,10 @@ public class JavaFXApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         org.springframework.boot.SpringApplication.run(SpringApplication.class);
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Scene.fxml")));
 
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/UIScene.fxml")));
         Scene scene = new Scene(root);
+
         scene.getStylesheets().add("/styles/Styles.css");
 
         stage.setTitle("BikeRevolution");

@@ -6,25 +6,21 @@ import com.sfm2023.BikeRevolution.Spring.RepairsRepository;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TreeView;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FXMLController implements Initializable {
+
+public class FXMLController implements Initializable{
 
     @Autowired
     PartsRepository partsRepository;
 
     @Autowired
     RepairsRepository repairsRepository;
-
 
     @FXML
     private TextField arTextField;
@@ -60,8 +56,11 @@ public class FXMLController implements Initializable {
     private Tab webTab;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Pisi");
+
 //        raktarListVieW.getItems().setAll(FXCollections.observableList(partsRepository.findAll()));
+        Modell.listViewWrite();
 
     }
 }

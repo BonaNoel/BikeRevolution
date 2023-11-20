@@ -1,5 +1,6 @@
 package com.sfm2023.BikeRevolution.Spring;
 
+import javafx.collections.FXCollections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -49,9 +50,10 @@ public class databaseInitializer implements CommandLineRunner {
         repairsRepository.save(new Repairs(8L,"Kormányfej Cseréje","Kormányfej cseréje és beállítása/Zsírozása","65"));
         repairsRepository.save(new Repairs(9L,"Pedál Cseréje","Pedál cseréje és beállítása/Zsírozása","30"));
         repairsRepository.save(new Repairs(10L,"Kormány és Kormányszár Állítás","Kormány és kormányszár beállítása","25"));
-        repairsRepository.save(new Repairs(11L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírzás","25"));
+        repairsRepository.save(new Repairs(11L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírozás","25"));
         repairsRepository.save(new Repairs(12L,"Gumi Csere","Első hátsó külső gumi csere","30"));
 
         System.out.println("Database uploaded successfully");
+//        System.out.println(partsRepository.findById(2L));
     }
 }
