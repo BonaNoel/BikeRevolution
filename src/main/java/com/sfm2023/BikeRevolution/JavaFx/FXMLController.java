@@ -57,10 +57,10 @@ public class FXMLController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Pisi");
+//        System.out.println("Pisi");
 
 //        raktarListVieW.getItems().setAll(FXCollections.observableList(partsRepository.findAll()));
-        Modell.listViewWrite();
+//        Modell.listViewWrite();
 
     }
 }

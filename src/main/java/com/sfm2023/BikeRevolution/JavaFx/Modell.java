@@ -16,10 +16,13 @@ public class Modell {
     @Autowired
     static RepairsRepository repairsRepository;
 
+    @Autowired
+    static CustomersRepository customersRepository;
+
 
     public static void listViewWrite() {
-        ArrayList<Parts> dataList = (ArrayList<Parts>) partsRepository.findAll();
-        System.out.println(dataList);
+//        ArrayList<Parts> dataList = (ArrayList<Parts>) partsRepository.findAll();
+//        System.out.println(dataList);
     }
 
 }
