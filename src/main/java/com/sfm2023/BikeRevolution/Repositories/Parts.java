@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -16,5 +18,5 @@ public class Parts {
     Long id;
     String partName;
     Integer partQuantity;
-    String partPrice;
+    Integer partPrice;
 }

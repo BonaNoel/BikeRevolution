@@ -1,5 +1,6 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
+import com.sfm2023.BikeRevolution.Repositories.CustomersRepository;
 import com.sfm2023.BikeRevolution.Repositories.Parts;
 import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
 import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
@@ -19,6 +20,9 @@ public class FXMLController implements Initializable{
 
     @Autowired
     RepairsRepository repairsRepository;
+
+    @Autowired
+    CustomersRepository customersRepository;
 
     @FXML
     private TextField arTextField;

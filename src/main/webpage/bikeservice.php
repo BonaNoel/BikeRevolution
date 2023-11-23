@@ -31,11 +31,11 @@
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Your corrected database connection code for MariaDB
-    $host = 'localhost';
+    $host = '127.0.0.1';
     $port = '3306';
-    $dbname = 'bike_revolution';
-    $user = 'your_database_user';
-    $password = 'your_database_password';
+    $dbname = 'bikerevolutiondb';
+    $user = 'root';
+    $password = '';
 
     try {
         $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $password);
