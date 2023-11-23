@@ -1,12 +1,10 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
-import com.sfm2023.BikeRevolution.Spring.Parts;
-import com.sfm2023.BikeRevolution.Spring.PartsRepository;
-import com.sfm2023.BikeRevolution.Spring.RepairsRepository;
-import javafx.collections.FXCollections;
+import com.sfm2023.BikeRevolution.Repositories.Parts;
+import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
+import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import org.springframework.beans.factory.annotation.Autowired;
 

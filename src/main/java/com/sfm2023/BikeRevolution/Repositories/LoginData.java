@@ -1,5 +1,4 @@
-package com.sfm2023.BikeRevolution.Spring;
-
+package com.sfm2023.BikeRevolution.Repositories;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,12 +11,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Repairs {
-
+public class LoginData {
     @Id
     @GeneratedValue
+
     Long id;
-    String repairName;
-    String repairDescription;
-    String repairCost;
+    String username;
+    String password;
 }

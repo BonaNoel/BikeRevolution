@@ -1,4 +1,4 @@
-package com.sfm2023.BikeRevolution.Spring;
+package com.sfm2023.BikeRevolution.Repositories;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,5 +16,5 @@ public class Parts {
     Long id;
     String partName;
     Integer partQuantity;
-    Integer partPrice;
+    String partPrice;
 }

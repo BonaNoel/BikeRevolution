@@ -1,11 +1,9 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
-import com.sfm2023.BikeRevolution.Spring.Parts;
-import com.sfm2023.BikeRevolution.Spring.PartsRepository;
-import com.sfm2023.BikeRevolution.Spring.RepairsRepository;
+import com.sfm2023.BikeRevolution.Repositories.CustomersRepository;
+import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
+import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.sfm2023.BikeRevolution.Spring.*;
-import java.util.ArrayList;
 
 
 public class Modell {
