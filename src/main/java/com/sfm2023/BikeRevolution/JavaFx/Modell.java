@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Modell {
 
-    @Autowired
-    static PartsRepository partsRepository;
-
-    @Autowired
-    static RepairsRepository repairsRepository;
-
-    @Autowired
-    static CustomersRepository customersRepository;
+//    @Autowired
+//    static PartsRepository partsRepository;
+//
+//    @Autowired
+//    static RepairsRepository repairsRepository;
+//
+//    @Autowired
+//    static CustomersRepository customersRepository;
 
 
     public static void listViewWrite() {

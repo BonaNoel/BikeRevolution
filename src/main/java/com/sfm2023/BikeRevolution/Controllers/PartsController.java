@@ -3,12 +3,14 @@
 //import com.sfm2023.BikeRevolution.Repositories.Parts;
 //import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Service;
 //import org.springframework.web.bind.annotation.*;
 //
 //import java.util.List;
 //import java.util.Map;
 //
 //@RestController
+//@Service
 //public class PartsController {
 //
 //    @Autowired
@@ -30,7 +32,7 @@
 //        Long id = Long.valueOf(body.get("id"));
 //        String partName = body.get("partName");
 //        Integer partQuantity = Integer.valueOf(body.get("partQuantity"));
-//        String partPrice = body.get("partPrice");
+//        Integer partPrice = Integer.valueOf(body.get("partPrice"));
 //        return partsRepository.save(new Parts(id, partName, partQuantity, partPrice));
 //    }
 //
@@ -39,7 +41,7 @@
 //        Parts part = partsRepository.findOneById(id);
 //        part.setPartName(body.get("partName"));
 //        part.setPartQuantity(Integer.valueOf(body.get("partQuantity")));
-//        part.setPartPrice(body.get("partPrice"));
+//        part.setPartPrice(Integer.valueOf(body.get("partPrice")));
 //        return partsRepository.save(part);
 //    }
 //
