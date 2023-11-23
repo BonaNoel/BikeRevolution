@@ -1,0 +1,79 @@
+body {
+  background-image: url("bike.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container1 {
+  text-align: left;
+  padding: 0px;
+}
+
+.container2 {
+  text-align: left;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.title {
+  font-size: 40px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+.btn {
+  border: 3px solid black;
+  padding: 10px 30px;
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Marker Felt", fantasy;
+  transition: 0.6s ease;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+label,
+input {
+  display: flex;
+  flex-direction: column;
+  font-family: "Marker Felt", fantasy;
+}
+
+.form {
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.nev {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+
+.telefon {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+
+.ido {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+
+.leiras {
+  font-size: 25px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}

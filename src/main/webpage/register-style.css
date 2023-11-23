@@ -1,0 +1,68 @@
+body {
+  background-image: url("bike.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container {
+  text-align: center;
+  margin-top: 5%;
+}
+.title {
+  font-size: 40px;
+  font-family: "Marker Felt", fantasy;
+  color: black;
+}
+.btn {
+  border: 3px solid black;
+  padding: 10px 30px;
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Marker Felt", fantasy;
+  transition: 0.6s ease;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+div.form {
+  display: block;
+  text-align: center;
+}
+.form {
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: left;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.form input:focus {
+  outline: none;
+}
+.form input[type="submit"] {
+  border: none;
+  padding: 10px 30px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Marker Felt", fantasy;
+  transition: 0.6s ease;
+}
+.form input[type="submit"]:hover {
+  background-color: white;
+  color: black;
+}
