@@ -56,8 +56,6 @@ public class databaseInitializer implements CommandLineRunner {
         repairsRepository.save(new Repairs(11L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírozás","25"));
         repairsRepository.save(new Repairs(12L,"Gumi Csere","Első hátsó külső gumi csere","30"));
 
-        customersRepository.save(new Customers(1L,"Bela","+36-30-522-6641","2023.51.12","faszaszadba"));
-
         System.out.println("Database uploaded successfully");
 //        System.out.println(partsRepository.findById(2L));
     }
