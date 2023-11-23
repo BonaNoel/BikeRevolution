@@ -1,6 +1,10 @@
 package com.sfm2023.BikeRevolution.Spring;
 
-import com.sfm2023.BikeRevolution.Repositories.*;
+import com.sfm2023.BikeRevolution.Entities.Parts;
+import com.sfm2023.BikeRevolution.Entities.Repairs;
+import com.sfm2023.BikeRevolution.Repositories.CustomersRepository;
+import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
+import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -56,9 +60,6 @@ public class DatabaseInitializer implements CommandLineRunner {
         repairsRepository.save(new Repairs(11L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírozás","25"));
         repairsRepository.save(new Repairs(12L,"Gumi Csere","Első hátsó külső gumi csere","30"));
 
-        customersRepository.save(new Customers(1L,"Bela","+36-30-522-6641","2023.51.12","faszaszadba"));
-
         System.out.println("Database uploaded successfully");
-//        System.out.println(partsRepository.findById(2L));
     }
 }
