@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class databaseInitializer implements CommandLineRunner {
+public class DatabaseInitializer implements CommandLineRunner {
 
     @Autowired
     PartsRepository partsRepository;

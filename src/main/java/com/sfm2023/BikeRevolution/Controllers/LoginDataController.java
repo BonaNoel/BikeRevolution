@@ -2,8 +2,9 @@
 //
 //import com.sfm2023.BikeRevolution.Repositories.Customers;
 //import com.sfm2023.BikeRevolution.Repositories.CustomersRepository;
-//import com.sfm2023.BikeRevolution.Repositories.Parts;
-//import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
+//import com.sfm2023.BikeRevolution.Repositories.LoginData;
+//import com.sfm2023.BikeRevolution.Repositories.LoginDataRepository;
+//import org.apache.tomcat.util.net.openssl.ciphers.Encryption;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.*;
 //
@@ -11,29 +12,27 @@
 //import java.util.Map;
 //
 //@RestController
-//public class CustomersController {
-//
+//public class LoginDataController {
 //    @Autowired
-//    CustomersRepository customersRepository;
+//    LoginDataRepository loginDataRepository;
 //
-//    @GetMapping("/customers")
-//    public List<Customers> listAll(){
-//        return customersRepository.findAll();
+//    @GetMapping("/logindata")
+//    public List<LoginData> listAll(){
+//        return loginDataRepository.findAll();
 //    }
 //
-//    @GetMapping("/customers/{id}")
+//    @GetMapping("/logindata/{id}")
 //    public Customers listOneById(@PathVariable Long id){
-//        return customersRepository.findOneById(id);
+//        return loginDataRepository.findOneById(id);
 //    }
 //
 //
-//    @PostMapping("/customers")
+//    @PostMapping("/logindata")
 //    public Customers create(@RequestBody Map<String, String> body){
 //        Long id = Long.valueOf(body.get("id"));
-//        String customerName = body.get("customerName");
-//        String customerPhone = body.get("customerPhone");
-//        String customerDate = body.get("customerDate");
-//        String customerDescription = body.get("customerDescription");
+//        String username = body.get("username");
+//        String tmp = body.get("password");
+//        Encryption
 //        return customersRepository.save(new Customers(id, customerName, customerPhone, customerDate, customerDescription));
 //    }
 //
