@@ -1,4 +1,5 @@
-package com.sfm2023.BikeRevolution.Repositories;
+package com.sfm2023.BikeRevolution.Entities;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,11 +14,12 @@ import org.springframework.stereotype.Repository;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginData {
+public class Repairs {
+
     @Id
     @GeneratedValue
-
     Long id;
-    String username;
-    String password;
+    String repairName;
+    String repairDescription;
+    String repairCost;
 }

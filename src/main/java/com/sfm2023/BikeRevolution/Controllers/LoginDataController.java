@@ -1,8 +1,8 @@
 //package com.sfm2023.BikeRevolution.Controllers;
 //
-//import com.sfm2023.BikeRevolution.Repositories.Customers;
+//import com.sfm2023.BikeRevolution.Entities.Customers;
 //import com.sfm2023.BikeRevolution.Repositories.CustomersRepository;
-//import com.sfm2023.BikeRevolution.Repositories.LoginData;
+//import com.sfm2023.BikeRevolution.Entities.LoginData;
 //import com.sfm2023.BikeRevolution.Repositories.LoginDataRepository;
 //import org.apache.tomcat.util.net.openssl.ciphers.Encryption;
 //import org.springframework.beans.factory.annotation.Autowired;

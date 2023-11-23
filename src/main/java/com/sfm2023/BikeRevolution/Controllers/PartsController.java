@@ -1,16 +1,14 @@
 //package com.sfm2023.BikeRevolution.Controllers;
 //
 //
-//import com.sfm2023.BikeRevolution.Repositories.Parts;
+//import com.sfm2023.BikeRevolution.Entities.Parts;
 //import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
 //import javafx.collections.FXCollections;
 //import javafx.collections.ObservableList;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.context.annotation.Lazy;
 //import org.springframework.stereotype.Component;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.stereotype.Service;
 //
+//import java.util.ArrayList;
 //import java.util.List;
 //
 //@Component
@@ -20,7 +18,8 @@
 //    PartsRepository partsRepository;
 //
 //    public ObservableList<Parts> listViewWrite() {
-//        List<Parts> partsList = partsRepository.findAll();
+//        List<Parts> partsList = new ArrayList<>();
+//        partsList.add(partsRepository.findOneById(1L));
 //        return FXCollections.observableList(partsList);
 //    }
 //}

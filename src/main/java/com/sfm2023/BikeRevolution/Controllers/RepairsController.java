@@ -1,6 +1,6 @@
 //package com.sfm2023.BikeRevolution.Controllers;
 //
-//import com.sfm2023.BikeRevolution.Repositories.Repairs;
+//import com.sfm2023.BikeRevolution.Entities.Repairs;
 //import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.*;

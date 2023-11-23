@@ -1,4 +1,4 @@
-package com.sfm2023.BikeRevolution.Repositories;
+package com.sfm2023.BikeRevolution.Entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,14 +10,16 @@ import org.springframework.stereotype.Repository;
 
 @Data
 @Entity
-@Repository
 @AllArgsConstructor
 @NoArgsConstructor
-public class Parts {
+@Repository
+public class Customers {
     @Id
     @GeneratedValue
+
     Long id;
-    String partName;
-    Integer partQuantity;
-    Integer partPrice;
+    String customerName;
+    String customerPhone;
+    String customerDate;
+    String customerDescription;
 }

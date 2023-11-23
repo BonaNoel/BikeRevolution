@@ -1,25 +1,21 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
-import com.sfm2023.BikeRevolution.Repositories.Parts;
-import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
-import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
+import com.sfm2023.BikeRevolution.Entities.Parts;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-@Component
+//@Component
 public class FXMLController implements Initializable{
 
-    @Autowired
-    PartsRepository partsRepository;
-
-    @Autowired
-    RepairsRepository repairsRepository;
+//    @Autowired
+//    PartsRepository partsRepository;
+//
+//    @Autowired
+//    RepairsRepository repairsRepository;
 
     @FXML
     private TextField arTextField;
