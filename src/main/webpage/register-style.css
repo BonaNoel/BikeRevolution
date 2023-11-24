@@ -5,6 +5,14 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+.error-message {
+  color: #f44336; /* Red text color */
+  font-weight: bold;
+}
+.error-container {
+  display: <?php echo isset ( $errorMessage ) ? 'block' : 'none'; ?>;
+  margin-top: 10px;
+}
 .container {
   text-align: center;
   margin-top: 5%;
