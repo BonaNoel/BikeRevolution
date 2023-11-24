@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Parts {
+
     @Id
     @GeneratedValue
     Long id;

@@ -1,21 +1,22 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
+import com.sfm2023.BikeRevolution.Controllers.PartsController;
 import com.sfm2023.BikeRevolution.Entities.Parts;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-//@Component
+@Component
 public class FXMLController implements Initializable{
 
-//    @Autowired
-//    PartsRepository partsRepository;
-//
-//    @Autowired
-//    RepairsRepository repairsRepository;
+    @Autowired
+    PartsController partsController;
 
     @FXML
     private TextField arTextField;
@@ -50,6 +51,16 @@ public class FXMLController implements Initializable{
     @FXML
     private Tab webTab;
 
+
+    @FXML
+    private Button raktraFeltoltesButton;
+
+    @FXML
+    void raktarFeltoltesAction(ActionEvent event) {
+        raktarListVieW.setItems(partsController.listViewWrite());
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        System.out.println("Pisi");
@@ -57,6 +68,7 @@ public class FXMLController implements Initializable{
 //
 //        raktarListVieW.setItems(partsController.listViewWrite());
     }
+
 }
 
 
