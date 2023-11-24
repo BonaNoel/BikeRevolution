@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Repository
+@Data
 public class Customers {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long id;
-    String customerName;
-    String customerPhone;
-    String customerDate;
-    String customerDescription;
+    String name;
+    String phone;
+    String date;
+    String description;
 }
