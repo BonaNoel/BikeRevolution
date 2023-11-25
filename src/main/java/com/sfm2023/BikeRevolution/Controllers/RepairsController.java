@@ -22,8 +22,6 @@ public class RepairsController {
     @Autowired
     RepairsRepository repairsRepository;
 
-    @Autowired
-    LocalCustomersController localCustomersController;
 
     public ObservableList<String> getRepairsName(){
         List<String> repairsName = new ArrayList<>();
@@ -31,14 +29,32 @@ public class RepairsController {
         return FXCollections.observableList(repairsName);
     }
 
-    // write a method which gets a name and a phonbe number and servicename and converts the servicename to the service id and saves it to the database
-    public void saveLocalCustomerRepairRequest(String name, String phoneNumber, String serviceName){
-        repairsRepository.findAll().forEach(repairs -> {
-            if (repairs.getName().equals(serviceName)){
-                Long serviceId = Long.parseLong(repairs.getId().toString());
-                localCustomersController.saveLocalCustomer(name, phoneNumber, serviceId);
-                return;
+    public Long convertRepairNameToRepairId(String repairName){
+        Long repairId = null;
+        for (Repairs repairs : repairsRepository.findAll()){
+            if (repairs.getName().equals(repairName)){
+                repairId = repairs.getId();
             }
-        });
+        }
+        return repairId;
+    }
+
+    public String convertRepairIdToRepairName(Long repairId){
+        String repairName = null;
+        for (Repairs repairs : repairsRepository.findAll()){
+            if (repairs.getId().equals(repairId)){
+                repairName = repairs.getName();
+            }
+        }
+        return repairName;
+    }
+
+
+    public String getRepairNameById(Long id){
+        return repairsRepository.findById(id).get().getName();
+    }
+
+    public String getRepairDescriptionById(Long repairTypeId) {
+        return repairsRepository.findById(repairTypeId).get().getDescription();
     }
 }
