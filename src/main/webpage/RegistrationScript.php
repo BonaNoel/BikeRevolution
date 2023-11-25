@@ -25,7 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkStatement->execute();
 
     if ($checkStatement->fetchColumn() > 0) {
+        // Registration failed because the username already exists
         $errorMessage = "Error: Username already exists. Please choose a different username.";
+        $responseClass = "error-message";
+        header("Location: bikeregister.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
     } else {
         // Encrypt the password (you should use a more secure method, like password_hash)
         $encryptedPassword = md5($password);
@@ -38,16 +41,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             if ($insertStatement->execute()) {
-                echo "Registration successful!";
-
-                // Redirect to index.php
-                header("Location: index.php");
-                exit();
+                // Registration successful message
+                $successMessage = "Registration successful!";
+                $responseClass = "success-message";
+                header("Location: bikeregister.php?response=" . urlencode($successMessage) . "&response_class=" . urlencode($responseClass));
             } else {
-                echo "Error: " . $insertStatement->errorInfo()[2];
+                // Registration failed for some reason
+                $errorMessage = "Error: " . $insertStatement->errorInfo()[2];
+                $responseClass = "error-message";
+                header("Location: bikeregister.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
             }
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            // Handle any exceptions that occur during the registration process
+            $errorMessage = "Error: " . $e->getMessage();
+            $responseClass = "error-message";
+            header("Location: bikeregister.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
         } finally {
             $insertStatement->closeCursor(); // Close the cursor to allow for the next query
         }

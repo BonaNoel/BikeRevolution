@@ -15,13 +15,13 @@
     <div class="form">
         <form action="SubmitScript.php"  method="post">
             <label for="name"> Név: </label>
-            <input type="text" name="name" placeholder="Név" class="nev"> <br>
+            <input type="text" name="name" placeholder="Név" class="nev" required> <br>
             <label for="phone"> Telefonszám: </label>
-            <input type="text" name="phone" placeholder="Telefonszám" class="telefon"> <br>
+            <input type="text" name="phone" placeholder="Telefonszám" class="telefon" required> <br>
             <label for="date"> Időpont: </label>
-            <input type="datetime-local" name="date" class="ido"> <br>
+            <input type="datetime-local" name="date" class="ido" required> <br>
             <label for="description"> Leírás: </label>
-            <input type="text" name="description" class="leiras" placeholder="Leírás"> <br>
+            <input type="text" name="description" class="leiras" placeholder="Leírás" required> <br>
             <input type="submit" name="submit" class="foglalas" value="Foglalás">
         </form>
     </div>
