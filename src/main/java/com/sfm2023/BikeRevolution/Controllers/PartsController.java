@@ -33,4 +33,9 @@ public class PartsController {
         return FXCollections.observableList(formattedPartStrings);
     }
 
+    public void increasePartQuantityByName(String partName) {
+        Parts parts = partsRepository.findByName(partName);
+        parts.setQuantity(parts.getQuantity() + 1);
+        partsRepository.save(parts);
+    }
 }
