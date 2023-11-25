@@ -5,16 +5,20 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+
 .container {
   text-align: center;
   margin-top: 5%;
 }
+
 .title {
   font-size: 40px;
   font-family: "Marker Felt", fantasy;
   color: black;
 }
+
 .btn {
+  width: auto;
   border: 3px solid black;
   padding: 10px 30px;
   color: black;
@@ -24,45 +28,61 @@ body {
   font-family: "Marker Felt", fantasy;
   transition: 0.6s ease;
 }
+
 .btn:hover {
+  background-size: auto;
   background-color: black;
   color: white;
 }
-div.form {
-  display: block;
-  text-align: center;
-}
+
 .form {
-  display: inline-block;
-  margin-top: 5%;
-  margin-left: 35%;
-  margin-right: 35%;
-  text-align: left;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+  text-align: center;
 }
+
 .form input {
-  width: 100%;
+  width: 60%;
   padding: 10px;
   margin: 5px;
   border: 1px solid white;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  display: block;
+  margin: 10px auto;
 }
+
 .form input:focus {
   outline: none;
 }
+
 .form input[type="submit"] {
+  width: 40%;
   border: none;
   padding: 10px 30px;
-  margin: 10px;
+  margin: 10px auto;
   font-size: 20px;
   font-family: "Marker Felt", fantasy;
   transition: 0.6s ease;
 }
+
 .form input[type="submit"]:hover {
   background-color: white;
   color: black;
+}
+
+#response-container p {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.error-container {
+  border-color: #fd0000;
+  color: #fd0000;
 }
