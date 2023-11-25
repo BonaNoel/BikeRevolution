@@ -1,6 +1,4 @@
 <?php
-session_start(); // Start the session
-
 $host = '127.0.0.1';
 $port = '3306';
 $dbname = 'bikerevolutiondb';
@@ -30,22 +28,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!$row) {
         // Username does not exist
-        $_SESSION['error_message'] = "Error: Username not found.";
+        $errorMessage = "HIBA: FELHASZNÁLÓ NÉV VAGY JELSZÓ NEM MEGFELELŐ!";
+        $responseClass = "error-message"; // Set response class to "error"
+        header("Location: bikelogin.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
+        exit(); // Exit to avoid further execution
     } else {
         // Check if the password matches (using MD5)
         $md5Password = md5($password);
         if ($md5Password === $row['password']) {
-            // Password matches, redirect to bikeservice.php
-            header("Location: bikeservice.php");
-            exit();
+            // Password matches, set success message and delay before redirect
+            $successMessage = "SIKERES BEJELENTKEZÉS!";
+            $responseClass = "success-message"; // Set response class to "success"
+            // Redirect to the bikeservice webpage immediately
+            header("Location: bikeservice.php?response=" . urlencode($successMessage) . "&response_class=" . urlencode($responseClass));
+            exit(); // Exit to avoid further execution
         } else {
             // Password does not match
-            $_SESSION['error_message'] = "Error: Incorrect password.";
+            $errorMessage = "Error: Username or Password is incorrect.";
+            $responseClass = "error-message"; // Set response class to "error"
+            header("Location: bikelogin.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
+            exit(); // Exit to avoid further execution
         }
     }
 }
 
-// Redirect to the login page after processing
-header("Location: bikelogin.php");
+// If no POST request, redirect to login page with an error message
+$errorMessage = "Invalid request.";
+$responseClass = "error";
+header("Location: bikelogin.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
 exit();
 ?>

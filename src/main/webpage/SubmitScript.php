@@ -17,6 +17,9 @@ try {
     exit();
 }
 
+$successMessage = '';
+$errorMessage = '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
@@ -33,21 +36,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         if ($stmt->execute()) {
-            $con->lastInsertId();
-            // No need to get the last inserted ID, as it's an auto-increment column
+            $successMessage = "SIKERES FOGLALÁS!";
 
-            echo "New record created successfully";
-
-            // Redirect to bikeservice.php
-            header('Location: bikeservice.php');
-            exit();  // Ensure that no other code is executed after the redirect
+            // Redirect to bikeservice.php with success message and class
+            header('Location: bikeservice.php?response=' . urlencode($successMessage) . '&response_class=success-message');
+            exit();
         } else {
-            echo "Error: " . $stmt->errorInfo()[2];
+            $errorMessage = "SIKERTELEN FOGLALÁS!";
         }
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        $errorMessage = "Error: " . $e->getMessage();
     } finally {
         $stmt->closeCursor(); // Close the cursor to allow for the next query
     }
 }
+
+// Redirect to webpage.php with error message and class
+header('Location: webpage.php?response=' . urlencode($errorMessage) . '&response_class=error-message');
+exit();
 ?>

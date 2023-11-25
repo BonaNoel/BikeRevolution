@@ -18,6 +18,7 @@ body {
 }
 
 .btn {
+  width: auto;
   border: 3px solid black;
   padding: 10px 30px;
   color: black;
@@ -29,30 +30,32 @@ body {
 }
 
 .btn:hover {
+  background-size: auto;
   background-color: black;
   color: white;
 }
 
 .form {
-  margin: 20px; /* Add margin to all sides */
+  margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%; /* Adjust the width as needed */
+  width: 40%;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  text-align: center; /* Center align the content */
+  text-align: center;
 }
 
 .form input {
-  width: 80%; /* Adjust the width as needed */
+  width: 60%;
   padding: 10px;
   margin: 5px;
   border: 1px solid white;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  display: inline-block; /* Ensure inputs are on the same line */
+  display: block;
+  margin: 10px auto;
 }
 
 .form input:focus {
@@ -60,10 +63,10 @@ body {
 }
 
 .form input[type="submit"] {
-  width: auto; /* Allow button to adjust its width */
+  width: 40%; /* Adjusted width for centering */
   border: none;
   padding: 10px 30px;
-  margin: 10px;
+  margin: 10px auto; /* Centered the submit button */
   font-size: 20px;
   font-family: "Marker Felt", fantasy;
   transition: 0.6s ease;
@@ -76,13 +79,15 @@ body {
 
 #response-container p {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .error-message {
-  color: red;
+  border-color: #fd0000;
+  color: #fd0000;
 }
 
 .success-message {
-  color: green;
+  border-color: #5bf65e;
+  color: #5bf65e;
 }

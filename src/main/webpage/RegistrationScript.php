@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($checkStatement->fetchColumn() > 0) {
         // Registration failed because the username already exists
-        $errorMessage = "Error: Username already exists. Please choose a different username.";
+        $errorMessage = "HIBA: EZ A FELHASZNÁLÓ NÉV MÁR LÉTEZIK";
         $responseClass = "error-message";
         header("Location: bikeregister.php?response=" . urlencode($errorMessage) . "&response_class=" . urlencode($responseClass));
     } else {
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if ($insertStatement->execute()) {
                 // Registration successful message
-                $successMessage = "Registration successful!";
+                $successMessage = "SIKERES REGISZTRÁCIÓ!";
                 $responseClass = "success-message";
                 header("Location: bikeregister.php?response=" . urlencode($successMessage) . "&response_class=" . urlencode($responseClass));
             } else {
