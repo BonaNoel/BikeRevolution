@@ -45,8 +45,8 @@ input {
 
 .form {
   display: inline-block;
-  margin-top: 5%;
-  margin-left: 35%;
+  margin-top: 0%;
+  margin-left: 25%;
   margin-right: 35%;
   text-align: left;
   padding: 20px;
@@ -76,4 +76,20 @@ input {
   font-size: 25px;
   font-family: "Marker Felt", fantasy;
   color: black;
+}
+
+#response-container{
+  margin-top: 10px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.success-message{
+  border-color: #5bf65e;
+  color: #5bf65e;
+}
+
+.error-message{
+  border-color: #f56b6b;
+  color: #f56b6b;
 }

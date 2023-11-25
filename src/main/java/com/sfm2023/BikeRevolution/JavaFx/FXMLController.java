@@ -1,9 +1,9 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
-import com.sfm2023.BikeRevolution.Repositories.CustomersRepository;
-import com.sfm2023.BikeRevolution.Repositories.Parts;
-import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
-import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
+import com.sfm2023.BikeRevolution.Controllers.LocalCustomersController;
+import com.sfm2023.BikeRevolution.Controllers.PartsController;
+import com.sfm2023.BikeRevolution.Controllers.RepairsController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -17,19 +17,7 @@ import java.util.ResourceBundle;
 public class FXMLController implements Initializable{
 
     @Autowired
-    PartsRepository partsRepository;
-
-    @Autowired
-    RepairsRepository repairsRepository;
-
-    @Autowired
-    CustomersRepository customersRepository;
-
-    @FXML
-    private TextField arTextField;
-
-    @FXML
-    private Tab foglalasTab;
+    JavaFXModell javaFXModell;
 
     @FXML
     private TreeView<?> foglalasokTreeView;
@@ -38,33 +26,56 @@ public class FXMLController implements Initializable{
     private TextField nevTextField;
 
     @FXML
-    private ListView<Parts> raktarListVieW;
-
-    @FXML
-    private Tab raktarTab;
-
-    @FXML
-    private Tab szervizFoglalasTab;
-
-    @FXML
-    private ChoiceBox<?> szervizTipusChoiceBox;
-
-    @FXML
-    private TabPane tabController;
-
-    @FXML
     private TextField telefonTextField;
 
     @FXML
-    private Tab webTab;
+    private ListView<String> raktarListVieW;
+
+
+    @FXML
+    private ChoiceBox<String> szervizTipusChoiceBox;
+
+    @FXML
+    private Accordion foglalasAccordion;
+
+
+    @FXML
+    private Button foglalasButton;
+
+    @FXML
+    private Tab foglalasTab;
+
+    @FXML
+    void foglalasAction(ActionEvent event) {
+        javaFXModell.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
+
+        TitledPane titledPane = createTitledPane(nevTextField.getText() + " " + telefonTextField.getText());
+        javaFXModell.putLocalCustomerRequestInTitledPane(titledPane);
+        foglalasAccordion.getPanes().add(titledPane);
+
+        nevTextField.clear();
+        telefonTextField.clear();
+        szervizTipusChoiceBox.setValue(null);
+
+    }
+
+    private TitledPane createTitledPane(String name){
+        TitledPane titledPane = new TitledPane();
+        titledPane.setText(name);
+        return titledPane;
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        System.out.println("Pisi");
-//        PartsController partsController = new PartsController();
-//
-//        raktarListVieW.setItems(partsController.listViewWrite());
+
+        szervizTipusChoiceBox.setItems(javaFXModell.repairsController.getRepairsName());
+
+        raktarListVieW.setItems(javaFXModell.partsController.getPartNameAndQuantity());
     }
+
+
+
 }
 
 

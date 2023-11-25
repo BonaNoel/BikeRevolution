@@ -1,52 +1,60 @@
-//package com.sfm2023.BikeRevolution.Controllers;
-//
-//import com.sfm2023.BikeRevolution.Repositories.Repairs;
-//import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.List;
-//import java.util.Map;
-//
-//@RestController
-//@Service
-//public class RepairsController {
-//
-//    @Autowired
-//    RepairsRepository repairsRepository;
-//
-//    @GetMapping("/repairs")
-//    public List<Repairs> listAll(){
-//        return repairsRepository.findAll();
-//    }
-//
-//    @GetMapping("/repairs/{id}")
-//    public Repairs listOneById(@PathVariable Long id){
-//        return repairsRepository.findOneById(id);
-//    }
-//
-//    @PostMapping("/repairs")
-//    public Repairs create(@RequestBody Map<String, String> body){
-//        Long id = Long.valueOf(body.get("id"));
-//        String repairName = body.get("repairName");
-//        String repairDescription = body.get("repairDescription");
-//        String repairPrice = body.get("repairPrice");
-//        return repairsRepository.save(new Repairs(id, repairName, repairDescription, repairPrice));
-//    }
-//
-//    @PutMapping("/repairs/{id}")
-//    public Repairs update(@PathVariable Long id, @RequestBody Map<String, String> body){
-//        Repairs repair = repairsRepository.findOneById(id);
-//        repair.setRepairName(body.get("repairName"));
-//        repair.setRepairDescription(body.get("repairDescription"));
-//        repair.setRepairCost(body.get("repairCost"));
-//        return repairsRepository.save(repair);
-//    }
-//
-//    @DeleteMapping("/repairs/{id}")
-//    public boolean delete(@PathVariable Long id){
-//        repairsRepository.deleteById(id);
-//        return true;
-//    }
-//}
+package com.sfm2023.BikeRevolution.Controllers;
+
+
+import com.sfm2023.BikeRevolution.Entities.LocalCustomers;
+import com.sfm2023.BikeRevolution.Entities.Parts;
+import com.sfm2023.BikeRevolution.Entities.Repairs;
+import com.sfm2023.BikeRevolution.Repositories.LocalCustomersRepository;
+import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
+import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
+import jakarta.annotation.PostConstruct;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class RepairsController {
+
+    @Autowired
+    RepairsRepository repairsRepository;
+
+
+    public ObservableList<String> getRepairsName(){
+        List<String> repairsName = new ArrayList<>();
+        repairsRepository.findAll().forEach(repairs -> repairsName.add(repairs.getName()));
+        return FXCollections.observableList(repairsName);
+    }
+
+    public Long convertRepairNameToRepairId(String repairName){
+        Long repairId = null;
+        for (Repairs repairs : repairsRepository.findAll()){
+            if (repairs.getName().equals(repairName)){
+                repairId = repairs.getId();
+            }
+        }
+        return repairId;
+    }
+
+    public String convertRepairIdToRepairName(Long repairId){
+        String repairName = null;
+        for (Repairs repairs : repairsRepository.findAll()){
+            if (repairs.getId().equals(repairId)){
+                repairName = repairs.getName();
+            }
+        }
+        return repairName;
+    }
+
+
+    public String getRepairNameById(Long id){
+        return repairsRepository.findById(id).get().getName();
+    }
+
+    public String getRepairDescriptionById(Long repairTypeId) {
+        return repairsRepository.findById(repairTypeId).get().getDescription();
+    }
+}
