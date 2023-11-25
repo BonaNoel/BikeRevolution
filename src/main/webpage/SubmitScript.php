@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
 
     // Insert data into the database with auto-incremented ID
-    $sql = "INSERT INTO customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
     $stmt->bindParam(1, $date);
     $stmt->bindParam(2, $description);
