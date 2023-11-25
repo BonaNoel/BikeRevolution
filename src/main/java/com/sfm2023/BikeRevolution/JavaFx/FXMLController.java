@@ -1,16 +1,15 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
-import com.sfm2023.BikeRevolution.Controllers.LocalCustomersController;
-import com.sfm2023.BikeRevolution.Controllers.PartsController;
-import com.sfm2023.BikeRevolution.Controllers.RepairsController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 @Component
@@ -47,9 +46,13 @@ public class FXMLController implements Initializable{
 
     @FXML
     void foglalasAction(ActionEvent event) {
+//        Ide meg a save elott csekk hogy van e eleg alkatresz
+
+
+
         javaFXModell.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
 
-        TitledPane titledPane = createTitledPane(nevTextField.getText() + " " + telefonTextField.getText());
+        TitledPane titledPane = createTitledPane(nevTextField.getText() + "    " + telefonTextField.getText());
         javaFXModell.putLocalCustomerRequestInTitledPane(titledPane);
         foglalasAccordion.getPanes().add(titledPane);
 
@@ -59,20 +62,29 @@ public class FXMLController implements Initializable{
 
     }
 
-    private TitledPane createTitledPane(String name){
+    private @NonNull TitledPane createTitledPane(String name){
         TitledPane titledPane = new TitledPane();
         titledPane.setText(name);
         return titledPane;
     }
 
+    @FXML
+    void rendelesAction(ActionEvent event) {
+        String partName = raktarListVieW.getSelectionModel().getSelectedItem().split("[0-9]")[0].trim();
+        javaFXModell.partsController.increasePartQuantityByName(partName);
+        javaFXModell.refreshRaktarListView(raktarListVieW);
+        raktarListVieW.getSelectionModel().select(partName);
+    }
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        szervizTipusChoiceBox.setItems(javaFXModell.repairsController.getRepairsName());
-
-        raktarListVieW.setItems(javaFXModell.partsController.getPartNameAndQuantity());
+        javaFXModell.refreshSzervizTipusChoiceBox(szervizTipusChoiceBox);
+        javaFXModell.refreshRaktarListView(raktarListVieW);
     }
+
 
 
 

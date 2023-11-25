@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface PartsRepository extends JpaRepository<Parts,Long> {
 
     Parts findOneById(Long partsId);
+
+    Parts findByName(String partName);
+
 }

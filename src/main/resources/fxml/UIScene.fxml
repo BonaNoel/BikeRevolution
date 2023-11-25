@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
+
+<?import javafx.geometry.Insets?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sfm2023.BikeRevolution.JavaFx.FXMLController">
     <children>
         <TabPane fx:id="tabController" layoutX="6.0" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="157.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -37,7 +44,8 @@
                     <content>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                             <children>
-                                <ListView fx:id="raktarListVieW" layoutY="7.0" prefHeight="443.2" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                <ListView fx:id="raktarListVieW" layoutY="7.0" prefHeight="345.0" prefWidth="700.0" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button fx:id="rendelesButton" layoutX="306.0" layoutY="373.0" mnemonicParsing="false" onAction="#rendelesAction" prefHeight="46.0" prefWidth="89.0" text="Rendelés" />
                             </children>
                         </AnchorPane>
                     </content>

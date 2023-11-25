@@ -3,10 +3,9 @@ package com.sfm2023.BikeRevolution.JavaFx;
 import com.sfm2023.BikeRevolution.Controllers.LocalCustomersController;
 import com.sfm2023.BikeRevolution.Controllers.PartsController;
 import com.sfm2023.BikeRevolution.Controllers.RepairsController;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,20 +25,24 @@ public class JavaFXModell {
         localCustomersController.saveLocalCustomer(name, phoneNumber, repairsController.convertRepairNameToRepairId(serviceName));
     }
 
-    public void putLocalCustomerRequestInTitledPane(TitledPane titledPane){
+    public void putLocalCustomerRequestInTitledPane(@NonNull TitledPane titledPane){
         String repairName = "Szerviz típusa: " + repairsController.convertRepairIdToRepairName(localCustomersController.getLastRepairTypeId());
-        TextField repairNameTextField = new TextField( repairName);
+        Label repairNameLabel = new Label( repairName);
 
         String repairDescription = "Szerviz leírása: " + repairsController.getRepairDescriptionById(localCustomersController.getLastRepairTypeId());
-        TextField repairDescriptionTextField = new TextField(repairDescription);
+        Label repairDescriptionLabel = new Label(repairDescription);
 
         Button doneButton = new Button("Kész");
 
-        titledPane.setContent(repairNameTextField);
-        titledPane.setContent(repairDescriptionTextField);
-        titledPane.setContent(doneButton);
+        VBox contentContainer = new VBox(20);
+        contentContainer.getChildren().addAll(repairNameLabel, repairDescriptionLabel, doneButton);
+        titledPane.setContent(contentContainer);
+    }
+    public void refreshRaktarListView(@NonNull ListView<String> raktarListVieW) {
+        raktarListVieW.setItems(partsController.getPartNameAndQuantity());
     }
 
-
-
+    public void refreshSzervizTipusChoiceBox(@NonNull ChoiceBox<String> szervizTipusChoiceBox) {
+        szervizTipusChoiceBox.setItems(repairsController.getRepairsName());
+    }
 }
