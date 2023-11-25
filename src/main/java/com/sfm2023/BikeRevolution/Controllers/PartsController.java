@@ -3,12 +3,12 @@ package com.sfm2023.BikeRevolution.Controllers;
 
 import com.sfm2023.BikeRevolution.Entities.Parts;
 import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
-import jakarta.annotation.PostConstruct;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -17,9 +17,20 @@ public class PartsController {
     @Autowired
     PartsRepository partsRepository;
 
-    @PostConstruct
-    public ObservableList<Parts> listViewWrite() {
+
+    public ObservableList<String> getPartNameAndQuantity() {
         List<Parts> partsList = partsRepository.findAll();
-        return FXCollections.observableList(partsList);
+        List<String> formattedPartStrings = new ArrayList<>();
+
+        for (Parts parts : partsList) {
+            String sb = parts.getName() +
+                    " " +
+                    parts.getQuantity() +
+                    " db";
+
+            formattedPartStrings.add(sb);
+        }
+        return FXCollections.observableList(formattedPartStrings);
     }
+
 }

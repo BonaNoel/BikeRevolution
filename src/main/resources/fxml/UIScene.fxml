@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
-
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sfm2023.BikeRevolution.JavaFx.FXMLController">
     <children>
         <TabPane fx:id="tabController" layoutX="6.0" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="157.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -34,10 +27,8 @@
                                 <TextField fx:id="telefonTextField" layoutX="45.0" layoutY="47.0" AnchorPane.bottomAnchor="297.59999999999997" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="422.0" AnchorPane.topAnchor="100.0" />
                                 <Text layoutX="90.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonszám:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="110.0" />
                                 <Text layoutX="100.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Szervíz típusa:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="180.0" />
-                                <TextField fx:id="arTextField" layoutX="65.0" layoutY="67.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="230.0" />
-                                <Text layoutX="110.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ár:" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="235.0" />
                         <ChoiceBox fx:id="szervizTipusChoiceBox" layoutX="130.0" layoutY="176.0" prefWidth="150.0" />
-                        <Button fx:id="raktraFeltoltesButton" layoutX="523.0" layoutY="60.0" mnemonicParsing="false" onAction="#raktarFeltoltesAction" text="Raktar feltoltes" />
+                        <Button fx:id="foglalasButton" layoutX="451.0" layoutY="104.0" mnemonicParsing="false" onAction="#foglalasAction" prefHeight="43.0" prefWidth="89.0" text="Foglalás" />
                             </children>
                         </AnchorPane>
                     </content>

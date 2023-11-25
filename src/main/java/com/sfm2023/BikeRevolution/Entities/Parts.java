@@ -2,10 +2,9 @@ package com.sfm2023.BikeRevolution.Entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.stereotype.Repository;
 
 @Data
@@ -13,12 +12,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Parts {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String partName;
-    Integer partQuantity;
-    Integer partPrice;
+    String name;
+    Integer quantity;
+    Integer price;
 }

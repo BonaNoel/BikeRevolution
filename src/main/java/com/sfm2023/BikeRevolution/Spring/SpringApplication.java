@@ -8,13 +8,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
-
 @SpringBootApplication(scanBasePackages = "com.sfm2023.BikeRevolution")
 @EnableJpaRepositories("com.sfm2023.BikeRevolution.Repositories")
 @EntityScan("com.sfm2023.BikeRevolution.Entities")
 public class SpringApplication {
-
 
     public static void main(String[] args) {
         Application.launch(JavaFXApplication.class, args);

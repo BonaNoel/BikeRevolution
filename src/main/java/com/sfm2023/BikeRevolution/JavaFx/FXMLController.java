@@ -1,7 +1,8 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
+import com.sfm2023.BikeRevolution.Controllers.LocalCustomersController;
 import com.sfm2023.BikeRevolution.Controllers.PartsController;
-import com.sfm2023.BikeRevolution.Entities.Parts;
+import com.sfm2023.BikeRevolution.Controllers.RepairsController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,11 +19,9 @@ public class FXMLController implements Initializable{
     @Autowired
     PartsController partsController;
 
-    @FXML
-    private TextField arTextField;
+    @Autowired
+    RepairsController repairsController;
 
-    @FXML
-    private Tab foglalasTab;
 
     @FXML
     private TreeView<?> foglalasokTreeView;
@@ -31,42 +30,35 @@ public class FXMLController implements Initializable{
     private TextField nevTextField;
 
     @FXML
-    private ListView<Parts> raktarListVieW;
-
-    @FXML
-    private Tab raktarTab;
-
-    @FXML
-    private Tab szervizFoglalasTab;
-
-    @FXML
-    private ChoiceBox<?> szervizTipusChoiceBox;
-
-    @FXML
-    private TabPane tabController;
-
-    @FXML
     private TextField telefonTextField;
 
     @FXML
-    private Tab webTab;
+    private ListView<String> raktarListVieW;
 
 
     @FXML
-    private Button raktraFeltoltesButton;
+    private ChoiceBox<String> szervizTipusChoiceBox;
+
+
+
 
     @FXML
-    void raktarFeltoltesAction(ActionEvent event) {
-        raktarListVieW.setItems(partsController.listViewWrite());
+    private Button foglalasButton;
+
+    @FXML
+    void foglalasAction(ActionEvent event) {
+        repairsController.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
+        nevTextField.clear();
+        telefonTextField.clear();
+        szervizTipusChoiceBox.setValue(null);
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        System.out.println("Pisi");
-//        PartsController partsController = new PartsController();
-//
-//        raktarListVieW.setItems(partsController.listViewWrite());
+
+        szervizTipusChoiceBox.setItems(repairsController.getRepairsName());
+
+        raktarListVieW.setItems(partsController.getPartNameAndQuantity());
     }
 
 }
