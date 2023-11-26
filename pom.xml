@@ -94,6 +94,7 @@
 						<exclude>com/sfm2023/BikeRevolution/JavaFx/FXMLController.class</exclude>
 						<exclude>com/sfm2023/BikeRevolution/JavaFx/JavaFXApplication.class</exclude>
 						<exclude>com/sfm2023/BikeRevolution/JavaFx/JavaFXModell.class</exclude>
+						<exclude>com/sfm2023/BikeRevolution/Controllers/ResourceCostController.class</exclude>
 					</excludes>
 				</configuration>
 			</plugin>

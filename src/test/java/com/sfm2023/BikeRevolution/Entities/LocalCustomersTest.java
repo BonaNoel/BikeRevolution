@@ -39,7 +39,7 @@ class LocalCustomersTest {
     @Test
     void testToString() {
         LocalCustomers customer = LocalCustomers.builder().id(1L).name("John").phone("123-456").repairTypeId(2L).build();
-        String expectedToString = "LocalCustomers(id=1, name=John, phone=123-456, repairTypeId=2)";
+        String expectedToString = "LocalCustomers(id=1, name=John, phone=123-456, repairTypeId=2, completed=null)";
         assertEquals(expectedToString, customer.toString());
     }
 
