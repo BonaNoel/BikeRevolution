@@ -26,28 +26,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = $_POST['date'];
     $description = $_POST['description'];
 
-    // Insert data into the database with auto-incremented ID
-    $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
-    $stmt = $con->prepare($sql);
-    $stmt->bindParam(1, $date);
-    $stmt->bindParam(2, $description);
-    $stmt->bindParam(3, $name);
-    $stmt->bindParam(4, $phone);
+    // Validate date and time
+    $dayOfWeek = date('N', strtotime($date));
+    $time = date('H:i', strtotime($date));
 
-    try {
-        if ($stmt->execute()) {
-            $successMessage = "SIKERES FOGLALÁS!";
+    if ($dayOfWeek >= 1 && $dayOfWeek <= 5 && $time >= '08:00' && $time <= '18:00') {
+        // Insert data into the database with auto-incremented ID
+        $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(1, $date);
+        $stmt->bindParam(2, $description);
+        $stmt->bindParam(3, $name);
+        $stmt->bindParam(4, $phone);
 
-            // Redirect to bikeservice.php with success message and class
-            header('Location: bikeservice.php?response=' . urlencode($successMessage) . '&response_class=success-message');
-            exit();
-        } else {
-            $errorMessage = "SIKERTELEN FOGLALÁS!";
+        try {
+            if ($stmt->execute()) {
+                $successMessage = "SIKERES FOGLALÁS!";
+
+                // Redirect to bikeservice.php with success message and class
+                header('Location: bikeservice.php?response=' . urlencode($successMessage) . '&response_class=success-message');
+                exit();
+            } else {
+                $errorMessage = "SIKERTELEN FOGLALÁS!";
+            }
+        } catch (PDOException $e) {
+            $errorMessage = "Error: " . $e->getMessage();
+        } finally {
+            $stmt->closeCursor(); // Close the cursor to allow for the next query
         }
-    } catch (PDOException $e) {
-        $errorMessage = "Error: " . $e->getMessage();
-    } finally {
-        $stmt->closeCursor(); // Close the cursor to allow for the next query
+    } else {
+        $errorMessage = "A FOGLALÁS CSAK MUNKANAP 8:00-18:00 KÖZÖTT LEHETSÉGES!";
+        header('Location: bikeservice.php?response=' . urlencode($errorMessage) . '&response_class=error-message');
+        exit();
     }
 }
 
