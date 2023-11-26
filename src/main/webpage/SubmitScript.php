@@ -29,15 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate date and time
     $dayOfWeek = date('N', strtotime($date));
     $time = date('H:i', strtotime($date));
+    $currentDateTime = new DateTime();
+    $selectedDateTime = new DateTime($date);
 
-    // Check if the selected date already exists in the database
-    $existingRecordsQuery = "SELECT COUNT(*) FROM web_customers WHERE date = ?";
-    $existingRecordsStmt = $con->prepare($existingRecordsQuery);
-    $existingRecordsStmt->bindParam(1, $date);
-    $existingRecordsStmt->execute();
-    $existingRecordsCount = $existingRecordsStmt->fetchColumn();
-
-    if ($dayOfWeek >= 1 && $dayOfWeek <= 5 && $time >= '08:00' && $time <= '18:00' && $existingRecordsCount == 0) {
+    // Check if the selected date is in the future
+    if ($dayOfWeek >= 1 && $dayOfWeek <= 5 && $time >= '08:00' && $time <= '18:00' && $selectedDateTime > $currentDateTime) {
         // Insert data into the database with auto-incremented ID
         $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
@@ -62,10 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->closeCursor(); // Close the cursor to allow for the next query
         }
     } else {
-        if ($existingRecordsCount > 0) {
-            $errorMessage = "A KIVÁLASZTOTT IDŐPONT MÁR FOGALT!";
+        if ($selectedDateTime <= $currentDateTime) {
+            $errorMessage = "A FOGLALÁS CSAK LÉTEZŐ IDŐPONTBAN LEHETSÉGES!";
         } else {
-            $errorMessage = "A FOGALÁS CSAK MUNKANAPRA 8:00-18:00 KÖZÖTT LEHETSÉGES!";
+            $errorMessage = "A FOGLALÁS CSAK MUNKAIDŐBEN LEHETSÉGES! (H-P 8:00-18:00)";
         }
         header('Location: bikeservice.php?response=' . urlencode($errorMessage) . '&response_class=error-message');
         exit();
