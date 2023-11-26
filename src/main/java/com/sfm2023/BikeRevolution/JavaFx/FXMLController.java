@@ -54,6 +54,15 @@ public class FXMLController implements Initializable{
     private Accordion webAccordion;
 
     @FXML
+    private Button keszButton;
+
+    @FXML
+    void keszButtonAction(ActionEvent event) {
+
+    }
+
+
+    @FXML
     void frissitesButtonAction(ActionEvent event) {
         webAccordion.getPanes().clear();
 

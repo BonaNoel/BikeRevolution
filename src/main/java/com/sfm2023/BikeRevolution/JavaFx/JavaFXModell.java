@@ -36,10 +36,9 @@ public class JavaFXModell {
         String repairDescription = "Szerviz leírása: " + repairsController.getRepairDescriptionById(localCustomersController.getLastRepairTypeId());
         Label repairDescriptionLabel = new Label(repairDescription);
 
-        Button doneButton = new Button("Kész");
 
         VBox contentContainer = new VBox(20);
-        contentContainer.getChildren().addAll(repairNameLabel, repairDescriptionLabel, doneButton);
+        contentContainer.getChildren().addAll(repairNameLabel, repairDescriptionLabel);
         titledPane.setContent(contentContainer);
     }
     public void refreshRaktarListView(@NonNull ListView<String> raktarListVieW) {
