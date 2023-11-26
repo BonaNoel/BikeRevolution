@@ -55,7 +55,15 @@
                   <Accordion fx:id="foglalasAccordion" />
                </content>
                 </Tab>
-                <Tab fx:id="webTab" text="Web" />
+                <Tab fx:id="webTab" text="Web">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Accordion fx:id="webAccordion" prefHeight="360.0" prefWidth="700.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button fx:id="frissitesButton" layoutX="310.0" layoutY="376.0" mnemonicParsing="false" onAction="#frissitesButtonAction" prefHeight="41.0" prefWidth="81.0" text="Frissítés" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
             </tabs>
         </TabPane>
     </children>

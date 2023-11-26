@@ -2,8 +2,10 @@ package com.sfm2023.BikeRevolution.Spring;
 
 import com.sfm2023.BikeRevolution.Entities.Parts;
 import com.sfm2023.BikeRevolution.Entities.Repairs;
+import com.sfm2023.BikeRevolution.Entities.ResourceCost;
 import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
 import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
+import com.sfm2023.BikeRevolution.Repositories.ResourceCostRepository;
 import com.sfm2023.BikeRevolution.Repositories.WebCustomersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,6 +22,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 
     @Autowired
     WebCustomersRepository webCustomersRepository;
+
+    @Autowired
+    ResourceCostRepository ResourceCostRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -58,6 +63,19 @@ public class DatabaseInitializer implements CommandLineRunner {
         repairsRepository.save(new Repairs(10L,"Kormány és Kormányszár Állítás","Kormány és kormányszár beállítása","25"));
         repairsRepository.save(new Repairs(11L,"Nyereg Cseréje","Nyereg cseréje és beállítása/Zsírozás","25"));
         repairsRepository.save(new Repairs(12L,"Gumi Csere","Első hátsó külső gumi csere","30"));
+
+        ResourceCostRepository.save(new ResourceCost(1L,"1 19","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(2L,"3","-1"));
+        ResourceCostRepository.save(new ResourceCost(3L,"4 17","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(4L,"5 15","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(5L,"17 20","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(6L,"0","0"));
+        ResourceCostRepository.save(new ResourceCost(7L,"5 7","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(8L,"9 18","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(9L,"10 18","-2 -1"));
+        ResourceCostRepository.save(new ResourceCost(10L,"18","-1"));
+        ResourceCostRepository.save(new ResourceCost(11L,"14 18","-1 -1"));
+        ResourceCostRepository.save(new ResourceCost(12L,"2","-2"));
 
         System.out.println("Database uploaded successfully");
     }

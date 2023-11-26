@@ -3,6 +3,7 @@ package com.sfm2023.BikeRevolution.JavaFx;
 import com.sfm2023.BikeRevolution.Controllers.LocalCustomersController;
 import com.sfm2023.BikeRevolution.Controllers.PartsController;
 import com.sfm2023.BikeRevolution.Controllers.RepairsController;
+import com.sfm2023.BikeRevolution.Controllers.WebCustomerController;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import lombok.NonNull;
@@ -20,6 +21,9 @@ public class JavaFXModell {
 
     @Autowired
     LocalCustomersController localCustomersController;
+
+    @Autowired
+    WebCustomerController webCustomersController;
 
     public void saveLocalCustomerRepairRequest(String name, String phoneNumber, String serviceName){
         localCustomersController.saveLocalCustomer(name, phoneNumber, repairsController.convertRepairNameToRepairId(serviceName));
@@ -44,5 +48,19 @@ public class JavaFXModell {
 
     public void refreshSzervizTipusChoiceBox(@NonNull ChoiceBox<String> szervizTipusChoiceBox) {
         szervizTipusChoiceBox.setItems(repairsController.getRepairsName());
+    }
+
+    public void putWebCustomerRequestInTitledPane(@NonNull TitledPane titledPane, String date) {
+
+        String webCustomerPhoneNumber = "Telefonszám: " + webCustomersController.getWebCustomerPhoneByDate(date);
+        Label webCustomerPhoneNumberLabel = new Label(webCustomerPhoneNumber);
+
+        String webCustomerRepairDescription = "Leírása: " + webCustomersController.getWebCustomerDescriptionByDate(date);
+        Label webCustomerRepairDescriptionLabel = new Label(webCustomerRepairDescription);
+
+
+        VBox contentContainer = new VBox(20);
+        contentContainer.getChildren().addAll(webCustomerPhoneNumberLabel, webCustomerRepairDescriptionLabel);
+        titledPane.setContent(contentContainer);
     }
 }

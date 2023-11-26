@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static org.codehaus.plexus.util.StringUtils.trim;
+
 @Component
 public class FXMLController implements Initializable{
 
@@ -43,6 +45,31 @@ public class FXMLController implements Initializable{
 
     @FXML
     private Tab foglalasTab;
+
+
+    @FXML
+    private Button frissitesButton;
+
+    @FXML
+    private Accordion webAccordion;
+
+    @FXML
+    void frissitesButtonAction(ActionEvent event) {
+        webAccordion.getPanes().clear();
+
+        List<String> titledPaneNames = javaFXModell.webCustomersController.getWebCustomerNameAndDate();
+
+        for (String titledPaneName : titledPaneNames) {
+            TitledPane titledPane = createTitledPane(titledPaneName);
+            System.out.println(titledPaneName);
+            String[] tmp = titledPaneName.replaceAll("[^0-9]", " ").trim().split(" ");
+            String date = tmp[0] + "-" +  tmp[1]+ "-" + tmp[2] + "T" + tmp[3] + ":" + tmp[4];
+            System.out.println(date);
+            javaFXModell.putWebCustomerRequestInTitledPane(titledPane, date);
+            webAccordion.getPanes().add(titledPane);
+        }
+
+    }
 
     @FXML
     void foglalasAction(ActionEvent event) {

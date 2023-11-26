@@ -26,28 +26,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = $_POST['date'];
     $description = $_POST['description'];
 
-    // Insert data into the database with auto-incremented ID
-    $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
-    $stmt = $con->prepare($sql);
-    $stmt->bindParam(1, $date);
-    $stmt->bindParam(2, $description);
-    $stmt->bindParam(3, $name);
-    $stmt->bindParam(4, $phone);
+    // Validate date and time
+    $dayOfWeek = date('N', strtotime($date));
+    $time = date('H:i', strtotime($date));
 
-    try {
-        if ($stmt->execute()) {
-            $successMessage = "SIKERES FOGLALÁS!";
+    // Check if the selected date already exists in the database
+    $existingRecordsQuery = "SELECT COUNT(*) FROM web_customers WHERE date = ?";
+    $existingRecordsStmt = $con->prepare($existingRecordsQuery);
+    $existingRecordsStmt->bindParam(1, $date);
+    $existingRecordsStmt->execute();
+    $existingRecordsCount = $existingRecordsStmt->fetchColumn();
 
-            // Redirect to bikeservice.php with success message and class
-            header('Location: bikeservice.php?response=' . urlencode($successMessage) . '&response_class=success-message');
-            exit();
-        } else {
-            $errorMessage = "SIKERTELEN FOGLALÁS!";
+    if ($dayOfWeek >= 1 && $dayOfWeek <= 5 && $time >= '08:00' && $time <= '18:00' && $existingRecordsCount == 0) {
+        // Insert data into the database with auto-incremented ID
+        $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(1, $date);
+        $stmt->bindParam(2, $description);
+        $stmt->bindParam(3, $name);
+        $stmt->bindParam(4, $phone);
+
+        try {
+            if ($stmt->execute()) {
+                $successMessage = "SIKERES FOGLALÁS!";
+
+                // Redirect to bikeservice.php with success message and class
+                header('Location: bikeservice.php?response=' . urlencode($successMessage) . '&response_class=success-message');
+                exit();
+            } else {
+                $errorMessage = "SIKERTELEN FOGLALÁS!";
+            }
+        } catch (PDOException $e) {
+            $errorMessage = "Error: " . $e->getMessage();
+        } finally {
+            $stmt->closeCursor(); // Close the cursor to allow for the next query
         }
-    } catch (PDOException $e) {
-        $errorMessage = "Error: " . $e->getMessage();
-    } finally {
-        $stmt->closeCursor(); // Close the cursor to allow for the next query
+    } else {
+        if ($existingRecordsCount > 0) {
+            $errorMessage = "A KIVÁLASZTOTT IDŐPONT MÁR FOGALT!";
+        } else {
+            $errorMessage = "A FOGALÁS CSAK MUNKANAPRA 8:00-18:00 KÖZÖTT LEHETSÉGES!";
+        }
+        header('Location: bikeservice.php?response=' . urlencode($errorMessage) . '&response_class=error-message');
+        exit();
     }
 }
 
