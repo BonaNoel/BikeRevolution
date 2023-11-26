@@ -30,7 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dayOfWeek = date('N', strtotime($date));
     $time = date('H:i', strtotime($date));
 
-    if ($dayOfWeek >= 1 && $dayOfWeek <= 5 && $time >= '08:00' && $time <= '18:00') {
+    // Check if the selected date already exists in the database
+    $existingRecordsQuery = "SELECT COUNT(*) FROM web_customers WHERE date = ?";
+    $existingRecordsStmt = $con->prepare($existingRecordsQuery);
+    $existingRecordsStmt->bindParam(1, $date);
+    $existingRecordsStmt->execute();
+    $existingRecordsCount = $existingRecordsStmt->fetchColumn();
+
+    if ($dayOfWeek >= 1 && $dayOfWeek <= 5 && $time >= '08:00' && $time <= '18:00' && $existingRecordsCount == 0) {
         // Insert data into the database with auto-incremented ID
         $sql = "INSERT INTO web_customers (date, description, name, phone) VALUES (?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
@@ -55,7 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->closeCursor(); // Close the cursor to allow for the next query
         }
     } else {
-        $errorMessage = "A FOGLALÁS CSAK MUNKANAP 8:00-18:00 KÖZÖTT LEHETSÉGES!";
+        if ($existingRecordsCount > 0) {
+            $errorMessage = "A KIVÁLASZTOTT IDŐPONT MÁR FOGALT!";
+        } else {
+            $errorMessage = "A FOGALÁS CSAK MUNKANAPRA 8:00-18:00 KÖZÖTT LEHETSÉGES!";
+        }
         header('Location: bikeservice.php?response=' . urlencode($errorMessage) . '&response_class=error-message');
         exit();
     }
