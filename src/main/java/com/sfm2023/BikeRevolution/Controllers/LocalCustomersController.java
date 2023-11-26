@@ -15,15 +15,26 @@ public class LocalCustomersController {
     LocalCustomersRepository localCustomersRepository;
 
 
-    public void saveLocalCustomer(String name, String phoneNumber, Long repairTypeId){
+    public void saveLocalCustomer(String name, String phoneNumber, Long repairTypeId ){
         localCustomersRepository.save(LocalCustomers.builder()
                 .name(name)
                 .phone(phoneNumber)
                 .repairTypeId(repairTypeId)
+                .completed("not done")
                 .build());
     }
 
     public Long getLastRepairTypeId() {
         return localCustomersRepository.findAll().get(localCustomersRepository.findAll().size() - 1).getRepairTypeId();
+    }
+
+    public Long getRepairIdByCustomerId(Long customerId) {
+        return localCustomersRepository.findById(customerId).get().getRepairTypeId();
+    }
+
+    public void markRepairAsDone(Long customerId) {
+        LocalCustomers localCustomers = localCustomersRepository.findById(customerId).get();
+        localCustomers.setCompleted("done");
+        localCustomersRepository.save(localCustomers);
     }
 }

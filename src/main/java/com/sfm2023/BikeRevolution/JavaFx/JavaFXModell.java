@@ -1,14 +1,13 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
-import com.sfm2023.BikeRevolution.Controllers.LocalCustomersController;
-import com.sfm2023.BikeRevolution.Controllers.PartsController;
-import com.sfm2023.BikeRevolution.Controllers.RepairsController;
-import com.sfm2023.BikeRevolution.Controllers.WebCustomerController;
+import com.sfm2023.BikeRevolution.Controllers.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 
 @Component
 public class JavaFXModell {
@@ -25,6 +24,9 @@ public class JavaFXModell {
     @Autowired
     WebCustomerController webCustomersController;
 
+    @Autowired
+    ResourceCostController resourceCostController;
+
     public void saveLocalCustomerRepairRequest(String name, String phoneNumber, String serviceName){
         localCustomersController.saveLocalCustomer(name, phoneNumber, repairsController.convertRepairNameToRepairId(serviceName));
     }
@@ -36,10 +38,9 @@ public class JavaFXModell {
         String repairDescription = "Szerviz leírása: " + repairsController.getRepairDescriptionById(localCustomersController.getLastRepairTypeId());
         Label repairDescriptionLabel = new Label(repairDescription);
 
-        Button doneButton = new Button("Kész");
 
         VBox contentContainer = new VBox(20);
-        contentContainer.getChildren().addAll(repairNameLabel, repairDescriptionLabel, doneButton);
+        contentContainer.getChildren().addAll(repairNameLabel, repairDescriptionLabel);
         titledPane.setContent(contentContainer);
     }
     public void refreshRaktarListView(@NonNull ListView<String> raktarListVieW) {
@@ -63,4 +64,18 @@ public class JavaFXModell {
         contentContainer.getChildren().addAll(webCustomerPhoneNumberLabel, webCustomerRepairDescriptionLabel);
         titledPane.setContent(contentContainer);
     }
+
+    public void makeChangesToPartQuantity(Long repairId) {
+
+        ArrayList<String> resourcesList =  resourceCostController.getNeededPartsByRepairId(repairId);
+        ArrayList<Long> partsIdList = resourceCostController.getPartId(resourcesList);
+        ArrayList<Long> partQuantityList = resourceCostController.getPartQuantity(resourcesList);
+
+        for (int i = 0; i < partsIdList.size(); i++) {
+            partsController.decreasePartQuantityById(partsIdList.get(i), partQuantityList.get(i));
+        }
+
+    }
+
+
 }

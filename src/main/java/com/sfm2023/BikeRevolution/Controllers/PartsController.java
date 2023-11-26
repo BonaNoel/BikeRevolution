@@ -38,4 +38,11 @@ public class PartsController {
         parts.setQuantity(parts.getQuantity() + 1);
         partsRepository.save(parts);
     }
+
+
+    public void decreasePartQuantityById(Long partId, Long partQuantity) {
+        Parts parts = partsRepository.findById(partId).get();
+        parts.setQuantity((int) (parts.getQuantity() + partQuantity));
+        partsRepository.save(parts);
+    }
 }

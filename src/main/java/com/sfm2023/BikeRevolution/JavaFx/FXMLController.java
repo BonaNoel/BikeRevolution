@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static org.codehaus.plexus.util.StringUtils.trim;
 
 @Component
 public class FXMLController implements Initializable{
@@ -20,8 +20,6 @@ public class FXMLController implements Initializable{
     @Autowired
     JavaFXModell javaFXModell;
 
-    @FXML
-    private TreeView<?> foglalasokTreeView;
 
     @FXML
     private TextField nevTextField;
@@ -47,11 +45,36 @@ public class FXMLController implements Initializable{
     private Tab foglalasTab;
 
 
+
     @FXML
     private Button frissitesButton;
 
     @FXML
     private Accordion webAccordion;
+
+    @FXML
+    private Button keszButton;
+
+    private TitledPane expandedPane;
+
+    @FXML
+    void keszButtonAction(ActionEvent event) {
+
+        if (expandedPane != null) {
+
+            Long CustomerId =Long.valueOf(expandedPane.getText().split("\\.")[0]);
+            Long repairId = javaFXModell.localCustomersController.getRepairIdByCustomerId(CustomerId);
+
+            javaFXModell.makeChangesToPartQuantity(repairId);
+
+            javaFXModell.localCustomersController.markRepairAsDone(CustomerId);
+
+            javaFXModell.refreshRaktarListView(raktarListVieW);
+
+
+            foglalasAccordion.getPanes().remove(expandedPane);
+        }
+    }
 
     @FXML
     void frissitesButtonAction(ActionEvent event) {
@@ -71,13 +94,15 @@ public class FXMLController implements Initializable{
 
     }
 
+    private Long customerID = 1L;
     @FXML
     void foglalasAction(ActionEvent event) {
 //        Ide meg a save elott csekk hogy van e eleg alkatresz
 
         javaFXModell.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
 
-        TitledPane titledPane = createTitledPane(nevTextField.getText() + "    " + telefonTextField.getText());
+        TitledPane titledPane = createTitledPane(customerID + ".  " + nevTextField.getText() + "    " + telefonTextField.getText());
+        customerID++;
         javaFXModell.putLocalCustomerRequestInTitledPane(titledPane);
         foglalasAccordion.getPanes().add(titledPane);
 
@@ -105,6 +130,10 @@ public class FXMLController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         javaFXModell.refreshSzervizTipusChoiceBox(szervizTipusChoiceBox);
         javaFXModell.refreshRaktarListView(raktarListVieW);
+
+        foglalasAccordion.expandedPaneProperty().addListener((observable, oldValue, newValue) -> {
+            expandedPane = (TitledPane) newValue;
+        });
     }
 
 

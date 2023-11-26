@@ -23,4 +23,5 @@ public class LocalCustomers {
         String name;
         String phone;
         Long repairTypeId;
+        String completed;
 }
