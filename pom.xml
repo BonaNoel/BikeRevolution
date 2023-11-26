@@ -91,6 +91,9 @@
 					<excludes>
 						<exclude>com/sfm2023/BikeRevolution/Spring/DatabaseInitializer.class</exclude>
 						<exclude>com/sfm2023/BikeRevolution/Spring/SpringApplication.class</exclude>
+						<exclude>com/sfm2023/BikeRevolution/JavaFx/FXMLController.class</exclude>
+						<exclude>com/sfm2023/BikeRevolution/JavaFx/JavaFXApplication.class</exclude>
+						<exclude>com/sfm2023/BikeRevolution/JavaFx/JavaFXModell.class</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
