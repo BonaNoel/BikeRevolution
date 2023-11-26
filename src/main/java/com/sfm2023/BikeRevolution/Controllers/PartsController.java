@@ -45,4 +45,8 @@ public class PartsController {
         parts.setQuantity((int) (parts.getQuantity() + partQuantity));
         partsRepository.save(parts);
     }
+
+    public Integer getPartQuantityById(Long partId) {
+        return partsRepository.findById(partId).get().getQuantity();
+    }
 }

@@ -1,13 +1,8 @@
 package com.sfm2023.BikeRevolution.Controllers;
 
 
-import com.sfm2023.BikeRevolution.Entities.LocalCustomers;
-import com.sfm2023.BikeRevolution.Entities.Parts;
 import com.sfm2023.BikeRevolution.Entities.Repairs;
-import com.sfm2023.BikeRevolution.Repositories.LocalCustomersRepository;
-import com.sfm2023.BikeRevolution.Repositories.PartsRepository;
 import com.sfm2023.BikeRevolution.Repositories.RepairsRepository;
-import jakarta.annotation.PostConstruct;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.springframework.beans.factory.annotation.Autowired;
