@@ -23,7 +23,7 @@ class PartsTest {
         Parts part3 = new Parts(2L, "KulsoGumi", 2, 50);
 
         assertTrue(part1.canEqual(part2));
-        assertTrue(part2.canEqual(part1)); // symmetric property
+        assertTrue(part2.canEqual(part1));
         //assertFalse(part1.canEqual(part3));
     }
 
