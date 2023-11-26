@@ -1,3 +1,95 @@
-.button {
-    -fx-font-weight: bold;
+
+#main {
+    -fx-background-color: #f5f5dc;
+}
+
+
+Text {
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 16;
+}
+
+
+#szervizFoglalasTab {
+    -fx-background-color: #f5f5dc;
+    -fx-padding: 10;
+}
+
+#szervizAnchor {
+    -fx-background-color: #f5f5dc;
+}
+
+#szervizAnchor TextField {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-padding: 5;
+}
+
+#szervizAnchor Text {
+    -fx-fill: #333333;
+}
+
+#szervizTipusChoiceBox {
+    -fx-background-color: #ffffff;
+}
+
+#foglalasButton {
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ffffff;
+}
+
+#foglalasButton:hover {
+    -fx-background-color: #c0392b;
+}
+
+
+#raktarTab {
+    -fx-background-color: #f5f5dc;
+    -fx-padding: 10;
+}
+
+#raktarAnchor {
+    -fx-background-color: #f5f5dc;
+}
+
+#raktarTab ListView {
+    -fx-background-color: #ffffff;
+}
+
+#rendelesButton {
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ffffff;
+}
+
+#rendelesButton:hover {
+    -fx-background-color: #c0392b;
+}
+
+
+#foglalasTab {
+    -fx-background-color: #f5f5dc;
+    -fx-padding: 10;
+}
+
+#foglalasAccordion {
+    -fx-background-color: #f5f5dc;
+}
+
+
+#webTab {
+    -fx-background-color: #f5f5dc;
+    -fx-padding: 10;
+}
+
+#webAccordion {
+    -fx-background-color: #f5f5dc;
+}
+
+#frissitesButton {
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ffffff;
+}
+
+#frissitesButton:hover {
+    -fx-background-color: #c0392b;
 }
