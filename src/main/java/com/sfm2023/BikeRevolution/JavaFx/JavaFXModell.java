@@ -1,7 +1,10 @@
 package com.sfm2023.BikeRevolution.JavaFx;
 
 import com.sfm2023.BikeRevolution.Controllers.*;
-import javafx.scene.control.*;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.VBox;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,4 +81,16 @@ public class JavaFXModell {
     }
 
 
+    public Boolean checkIfThereIsEnoughParts(String repairId) {
+           ArrayList<String> resourcesList =  resourceCostController.getNeededPartsByRepairId(repairsController.convertRepairNameToRepairId(repairId));
+            ArrayList<Long> partsIdList = resourceCostController.getPartId(resourcesList);
+            ArrayList<Long> partQuantityList = resourceCostController.getPartQuantity(resourcesList);
+
+            for(Long partId : partsIdList){
+                if(partsController.getPartQuantityById(partId) < (partQuantityList.get(partsIdList.indexOf(partId)))* -1){
+                    return false;
+                }
+            }
+        return true;
+    }
 }

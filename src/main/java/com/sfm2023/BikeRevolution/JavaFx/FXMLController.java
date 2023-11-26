@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -97,7 +96,17 @@ public class FXMLController implements Initializable{
     private Long customerID = 1L;
     @FXML
     void foglalasAction(ActionEvent event) {
-//        Ide meg a save elott csekk hogy van e eleg alkatresz
+
+        Boolean valid = javaFXModell.checkIfThereIsEnoughParts(szervizTipusChoiceBox.getValue());
+
+        if (!valid){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hiba");
+            alert.setHeaderText("Nincs elég alkatrész");
+            alert.setContentText("Kérjük válasszon másik szerviztípust");
+            alert.showAndWait();
+            return;
+        }
 
         javaFXModell.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
 
@@ -132,7 +141,7 @@ public class FXMLController implements Initializable{
         javaFXModell.refreshRaktarListView(raktarListVieW);
 
         foglalasAccordion.expandedPaneProperty().addListener((observable, oldValue, newValue) -> {
-            expandedPane = (TitledPane) newValue;
+            expandedPane = newValue;
         });
     }
 

@@ -39,7 +39,7 @@ public class DatabaseInitializer implements CommandLineRunner {
         partsRepository.save(new Parts(7L,"Féktárcsa",25 ,30));
         partsRepository.save(new Parts(8L,"Váltó",20 ,20));
         partsRepository.save(new Parts(9L,"Kormányfej",18 ,25));
-        partsRepository.save(new Parts(10L,"Pedál",30 ,5));
+        partsRepository.save(new Parts(10L,"Pedál",1 ,5));
         partsRepository.save(new Parts(11L,"Kormány villa",20 ,20));
         partsRepository.save(new Parts(12L,"Első kerékpár agy",20,15));
         partsRepository.save(new Parts(13L,"Hátsó kerépkár agy", 20,15));
