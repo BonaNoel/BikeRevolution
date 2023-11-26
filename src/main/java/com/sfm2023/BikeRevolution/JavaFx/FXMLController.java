@@ -48,8 +48,6 @@ public class FXMLController implements Initializable{
     void foglalasAction(ActionEvent event) {
 //        Ide meg a save elott csekk hogy van e eleg alkatresz
 
-
-
         javaFXModell.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
 
         TitledPane titledPane = createTitledPane(nevTextField.getText() + "    " + telefonTextField.getText());
@@ -75,9 +73,6 @@ public class FXMLController implements Initializable{
         javaFXModell.refreshRaktarListView(raktarListVieW);
         raktarListVieW.getSelectionModel().select(partName);
     }
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
