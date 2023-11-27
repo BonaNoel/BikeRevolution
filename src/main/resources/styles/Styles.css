@@ -1,24 +1,24 @@
 
 #main {
-    -fx-background-color: #b0b0b0; /* Light Beige background */
+    -fx-background-color: #b0b0b0;
 
     }
 
-/* Styles for all Text elements */
+
 Text {
-    -fx-font-family: "Times New Roman"; /* Times New Roman font */
-    -fx-font-size: 16; /* Increase the font size to 16 */
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 16;
 }
 Button{
-    -fx-background-color: #3498db; /* Calm Blue */
-    -fx-text-fill: #ffffff; /* White text */
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ffffff;
     -fx-font-family: "Times New Roman";
     -fx-font-size: 16;
 }
 Button:hover
 {
-    -fx-background-color: #92D293; /* Calm Blue */
-    -fx-text-fill: #ffffff; /* White text */
+    -fx-background-color: #92D293;
+    -fx-text-fill: #ffffff;
 }
 AnchorPane{
     -fx-background-image: url(/styles/bike.jpg);
@@ -34,39 +34,39 @@ Tab{
     -fx-font-family: "Times New Roman";
     -fx-font-size: 13;
 }
-/* Styles for Szervíz foglalás Tab */
+
 #szervizFoglalasTab {
-    -fx-background-color: #b0b0b0; /* Light Beige */
+    -fx-background-color: #b0b0b0;
     -fx-padding: 10;
 }
 
 #szervizAnchor TextField {
-    -fx-background-color: #ffffff; /* White background for text field */
-    -fx-border-color: #ccc; /* Light Gray border color */
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
     -fx-padding: 5;
 }
 #szervizTipusChoiceBox {
-    -fx-background-color: #ffffff; /* White background for choice box */
+    -fx-background-color: #ffffff;
 }
 
-/* Styles for Raktár Tab */
+
 #raktarTab {
-    -fx-background-color: #b0b0b0; /* Light Beige */
+    -fx-background-color: #b0b0b0;
     -fx-padding: 10;
 }
 
 
 ListView {
-    -fx-background-color: #b0b0b0; /* White background color */
-    -fx-border-color: #b0b0b0; /* Light gray border color */
-    -fx-border-width: 1px; /* Border width */
-    -fx-border-radius: 5px; /* Border radius for rounded corners */
-    -fx-padding: 5px; /* Padding for each item */
+    -fx-background-color: #b0b0b0;
+    -fx-border-color: #b0b0b0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
     -fx-font-family: "Times New Roman";
     -fx-font-size: 16;
 }
 ListView .list-cell:selected{
-    -fx-background-color: #2196f3; /* Blue background color for selected item */
+    -fx-background-color: #2196f3;
     -fx-text-fill: #ffffff;
 }
 ListView .list-cell:hover{
@@ -77,24 +77,24 @@ LisView:focused{
     -fx-focus-color: transparent;
 }
 
-/* Styles for Foglalások Tab */
+
 #foglalasTab {
-    -fx-background-color: #b0b0b0; /* Light Beige */
+    -fx-background-color: #b0b0b0;
     -fx-padding: 10;
 }
 
 #foglalasAccordion {
-    -fx-background-color: #b0b0b0; /* Light Beige */
+    -fx-background-color: #b0b0b0;
 }
 
-/* Styles for Web Tab */
+
 #webTab {
-    -fx-background-color: #b0b0b0; /* Light Beige */
+    -fx-background-color: #b0b0b0;
     -fx-padding: 10;
 }
 
 #webAccordion {
-    -fx-background-color: #b0b0b0; /* Light Beige */
+    -fx-background-color: #b0b0b0; 
 }
 
 
