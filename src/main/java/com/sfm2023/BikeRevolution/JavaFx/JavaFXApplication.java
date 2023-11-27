@@ -28,6 +28,7 @@ public class JavaFXApplication extends Application {
         scene.getStylesheets().add("/styles/Styles.css");
 
         stage.setTitle("BikeRevolution");
+        stage.getIcons().add(new javafx.scene.image.Image("/styles/bike.jpg"));
         stage.setScene(scene);
         stage.show();
     }

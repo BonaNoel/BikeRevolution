@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
-
 <?import javafx.geometry.Insets?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sfm2023.BikeRevolution.JavaFx.FXMLController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sfm2023.BikeRevolution.JavaFx.FXMLController">
     <children>
-        <TabPane fx:id="tabController" layoutX="6.0" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="157.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TabPane fx:id="tabController" layoutX="6.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="157.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
                 <Tab fx:id="szervizFoglalasTab" text="Szervíz foglalás">
                     <content>
@@ -45,7 +38,7 @@
                         <AnchorPane fx:id="raktarAnchor" prefHeight="200.0" prefWidth="200.0">
                             <children>
                                 <ListView fx:id="raktarListVieW" layoutY="7.0" prefHeight="345.0" prefWidth="700.0" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button fx:id="rendelesButton" layoutX="310.0" layoutY="366.0" mnemonicParsing="false" onAction="#rendelesAction" prefHeight="41.0" prefWidth="81.0" text="Rendelés" />
+                        <Button fx:id="rendelesButton" layoutX="310.0" layoutY="366.0" mnemonicParsing="false" onAction="#rendelesAction" prefHeight="41.0" prefWidth="81.0" text="Rendelés" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="309.0" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -55,7 +48,7 @@
                   <AnchorPane>
                      <children>
                         <Accordion fx:id="foglalasAccordion" prefHeight="366.0" prefWidth="700.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button fx:id="keszButton" layoutX="310.0" layoutY="366.0" mnemonicParsing="false" onAction="#keszButtonAction" prefHeight="41.0" prefWidth="81.0" text="Kész" />
+                        <Button fx:id="keszButton" layoutX="310.0" layoutY="366.0" mnemonicParsing="false" onAction="#keszButtonAction" prefHeight="41.0" prefWidth="81.0" text="Kész" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="309.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -65,7 +58,7 @@
                   <AnchorPane fx:id="webAnchor" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Accordion fx:id="webAccordion" prefHeight="367.0" prefWidth="700.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button fx:id="frissitesButton" layoutX="310.0" layoutY="366.0" mnemonicParsing="false" onAction="#frissitesButtonAction" prefHeight="41.0" prefWidth="81.0" text="Frissítés" />
+                        <Button fx:id="frissitesButton" layoutX="310.0" layoutY="366.0" mnemonicParsing="false" onAction="#frissitesButtonAction" prefHeight="41.0" prefWidth="81.0" text="Frissítés" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="309.0" />
                      </children>
                   </AnchorPane>
                </content></Tab>

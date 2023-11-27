@@ -1,7 +1,8 @@
 
 #main {
-    -fx-background-color: #f5f5dc; /* Light Beige background */
-}
+    -fx-background-color: #b0b0b0; /* Light Beige background */
+
+    }
 
 /* Styles for all Text elements */
 Text {
@@ -20,18 +21,22 @@ Button:hover
     -fx-text-fill: #ffffff; /* White text */
 }
 AnchorPane{
-    -fx-background-color: #f5f5dc;
+    -fx-background-image: url(/styles/bike.jpg);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 
 }
 Tab{
-    -fx-background-color: #f5f5dc;
+    -fx-background-color: #b0b0b0;
     -fx-padding: 10;
     -fx-font-family: "Times New Roman";
     -fx-font-size: 13;
 }
 /* Styles for Szervíz foglalás Tab */
 #szervizFoglalasTab {
-    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-background-color: #b0b0b0; /* Light Beige */
     -fx-padding: 10;
 }
 
@@ -46,13 +51,13 @@ Tab{
 
 /* Styles for Raktár Tab */
 #raktarTab {
-    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-background-color: #b0b0b0; /* Light Beige */
     -fx-padding: 10;
 }
 
 
 ListView {
-    -fx-background-color: #ffffff; /* White background color */
+    -fx-background-color: #b0b0b0; /* White background color */
     -fx-border-color: #b0b0b0; /* Light gray border color */
     -fx-border-width: 1px; /* Border width */
     -fx-border-radius: 5px; /* Border radius for rounded corners */
@@ -74,22 +79,22 @@ LisView:focused{
 
 /* Styles for Foglalások Tab */
 #foglalasTab {
-    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-background-color: #b0b0b0; /* Light Beige */
     -fx-padding: 10;
 }
 
 #foglalasAccordion {
-    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-background-color: #b0b0b0; /* Light Beige */
 }
 
 /* Styles for Web Tab */
 #webTab {
-    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-background-color: #b0b0b0; /* Light Beige */
     -fx-padding: 10;
 }
 
 #webAccordion {
-    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-background-color: #b0b0b0; /* Light Beige */
 }
 
 
