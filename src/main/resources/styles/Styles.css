@@ -1,0 +1,100 @@
+/* styles.css */
+
+/* General styles for the entire AnchorPane */
+#main {
+    -fx-background-color: #f5e5b5; /* Light Beige background */
+}
+
+/* Styles for all Text elements */
+Text {
+    -fx-font-family: "Times New Roman"; /* Times New Roman font */
+    -fx-font-size: 16; /* Increase the font size to 16 */
+}
+
+/* Styles for Szervíz foglalás Tab */
+#szervizFoglalasTab {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-padding: 10;
+
+}
+
+#szervizAnchor {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+}
+
+#szervizAnchor TextField {
+    -fx-background-color: #ffffff; /* White background for text field */
+    -fx-border-color: #ccc; /* Light Gray border color */
+    -fx-padding: 5;
+}
+
+#szervizAnchor Text {
+    -fx-fill: #333333; /* Dark Gray text color */
+    -fx-stroke: #ffffff; /* White outline color */
+    -fx-stroke-width: 1; /* Outline width */
+}
+
+#szervizTipusChoiceBox {
+    -fx-background-color: #ffffff; /* White background for choice box */
+}
+
+#foglalasButton {
+    -fx-background-color: #d2b48c; /* Tan background */
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+#foglalasButton:hover {
+    -fx-background-color: #bfa67a; /* Darker Tan on hover */
+}
+
+/* Styles for Raktár Tab */
+#raktarTab {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-padding: 10;
+}
+
+#raktarAnchor {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+}
+
+#raktarTab ListView {
+    -fx-background-color: #ffffff; /* White background for list view */
+}
+
+#rendelesButton {
+    -fx-background-color: #d2b48c; /* Tan background */
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+#rendelesButton:hover {
+    -fx-background-color: #bfa67a; /* Darker Tan on hover */
+}
+
+/* Styles for Foglalások Tab */
+#foglalasTab {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-padding: 10;
+}
+
+#foglalasAccordion {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+}
+
+/* Styles for Web Tab */
+#webTab {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-padding: 10;
+}
+
+#webAccordion {
+    -fx-background-color: #f5e5b5; /* Light Beige */
+}
+
+#frissitesButton {
+    -fx-background-color: #d98880; /* Light Coral background */
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+#frissitesButton:hover {
+    -fx-background-color: #cd6155; /* Darker Coral on hover */
+}
