@@ -37,7 +37,7 @@ Clone the project
 Start the server
 
 ```bash
-  Start XAMP MariaDB and create database named: bikerevolutiondb
+  Start XAMPP MariaDB and create database named: bikerevolutiondb
 ```
 
 Start the application
@@ -45,5 +45,5 @@ Start the application
 ```bash
   Run project with spring-boot:run
 ```
-![Logo](https://secure.ce-tescoassets.com/assets/HU/366/5998817310366/ShotType1_540x540.jpg)
+![Logo](https://www.dreherzrt.hu/wp-content/uploads/2021/02/kb_flakon_FINAL.jpg)
 
