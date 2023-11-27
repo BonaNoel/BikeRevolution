@@ -88,6 +88,7 @@ public class FXMLController implements Initializable{
             String date = tmp[0] + "-" +  tmp[1]+ "-" + tmp[2] + "T" + tmp[3] + ":" + tmp[4];
             System.out.println(date);
             javaFXModell.putWebCustomerRequestInTitledPane(titledPane, date);
+            titledPane.setStyle("-fx-background-color: lightblue; -fx-text-fill: #333333; -fx-font-size: 14;");
             webAccordion.getPanes().add(titledPane);
         }
 
@@ -111,6 +112,8 @@ public class FXMLController implements Initializable{
         javaFXModell.saveLocalCustomerRepairRequest(nevTextField.getText(), telefonTextField.getText(), szervizTipusChoiceBox.getValue());
 
         TitledPane titledPane = createTitledPane(customerID + ".  " + nevTextField.getText() + "    " + telefonTextField.getText());
+        titledPane.setStyle("-fx-background-color: lightblue; -fx-text-fill: #333333; -fx-font-size: 14;");
+
         customerID++;
         javaFXModell.putLocalCustomerRequestInTitledPane(titledPane);
         foglalasAccordion.getPanes().add(titledPane);
@@ -124,6 +127,7 @@ public class FXMLController implements Initializable{
     private @NonNull TitledPane createTitledPane(String name){
         TitledPane titledPane = new TitledPane();
         titledPane.setText(name);
+        titledPane.setStyle("-fx-background-color: lightblue; -fx-text-fill: #333333; -fx-font-size: 14;");
         return titledPane;
     }
 

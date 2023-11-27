@@ -1,8 +1,6 @@
-/* styles.css */
 
-/* General styles for the entire AnchorPane */
 #main {
-    -fx-background-color: #f5e5b5; /* Light Beige background */
+    -fx-background-color: #f5f5dc; /* Light Beige background */
 }
 
 /* Styles for all Text elements */
@@ -10,16 +8,31 @@ Text {
     -fx-font-family: "Times New Roman"; /* Times New Roman font */
     -fx-font-size: 16; /* Increase the font size to 16 */
 }
-
-/* Styles for Szervíz foglalás Tab */
-#szervizFoglalasTab {
-    -fx-background-color: #f5e5b5; /* Light Beige */
-    -fx-padding: 10;
+Button{
+    -fx-background-color: #3498db; /* Calm Blue */
+    -fx-text-fill: #ffffff; /* White text */
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 16;
+}
+Button:hover
+{
+    -fx-background-color: #92D293; /* Calm Blue */
+    -fx-text-fill: #ffffff; /* White text */
+}
+AnchorPane{
+    -fx-background-color: #f5f5dc;
 
 }
-
-#szervizAnchor {
-    -fx-background-color: #f5e5b5; /* Light Beige */
+Tab{
+    -fx-background-color: #f5f5dc;
+    -fx-padding: 10;
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 13;
+}
+/* Styles for Szervíz foglalás Tab */
+#szervizFoglalasTab {
+    -fx-background-color: #f5f5dc; /* Light Beige */
+    -fx-padding: 10;
 }
 
 #szervizAnchor TextField {
@@ -27,74 +40,57 @@ Text {
     -fx-border-color: #ccc; /* Light Gray border color */
     -fx-padding: 5;
 }
-
-#szervizAnchor Text {
-    -fx-fill: #333333; /* Dark Gray text color */
-    -fx-stroke: #ffffff; /* White outline color */
-    -fx-stroke-width: 1; /* Outline width */
-}
-
 #szervizTipusChoiceBox {
     -fx-background-color: #ffffff; /* White background for choice box */
 }
 
-#foglalasButton {
-    -fx-background-color: #d2b48c; /* Tan background */
-    -fx-text-fill: #ffffff; /* White text */
-}
-
-#foglalasButton:hover {
-    -fx-background-color: #bfa67a; /* Darker Tan on hover */
-}
-
 /* Styles for Raktár Tab */
 #raktarTab {
-    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-background-color: #f5f5dc; /* Light Beige */
     -fx-padding: 10;
 }
 
-#raktarAnchor {
-    -fx-background-color: #f5e5b5; /* Light Beige */
-}
 
-#raktarTab ListView {
-    -fx-background-color: #ffffff; /* White background for list view */
+ListView {
+    -fx-background-color: #ffffff; /* White background color */
+    -fx-border-color: #b0b0b0; /* Light gray border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 5px; /* Border radius for rounded corners */
+    -fx-padding: 5px; /* Padding for each item */
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 16;
 }
-
-#rendelesButton {
-    -fx-background-color: #d2b48c; /* Tan background */
-    -fx-text-fill: #ffffff; /* White text */
+ListView .list-cell:selected{
+    -fx-background-color: #2196f3; /* Blue background color for selected item */
+    -fx-text-fill: #ffffff;
 }
-
-#rendelesButton:hover {
-    -fx-background-color: #bfa67a; /* Darker Tan on hover */
+ListView .list-cell:hover{
+    -fx-background-color: #e0e0e0;
+}
+LisView:focused{
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
 }
 
 /* Styles for Foglalások Tab */
 #foglalasTab {
-    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-background-color: #f5f5dc; /* Light Beige */
     -fx-padding: 10;
 }
 
 #foglalasAccordion {
-    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-background-color: #f5f5dc; /* Light Beige */
 }
 
 /* Styles for Web Tab */
 #webTab {
-    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-background-color: #f5f5dc; /* Light Beige */
     -fx-padding: 10;
 }
 
 #webAccordion {
-    -fx-background-color: #f5e5b5; /* Light Beige */
+    -fx-background-color: #f5f5dc; /* Light Beige */
 }
 
-#frissitesButton {
-    -fx-background-color: #d98880; /* Light Coral background */
-    -fx-text-fill: #ffffff; /* White text */
-}
 
-#frissitesButton:hover {
-    -fx-background-color: #cd6155; /* Darker Coral on hover */
-}
+
